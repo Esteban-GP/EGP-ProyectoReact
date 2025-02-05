@@ -1,5 +1,6 @@
 import NavBar from "./fragmentos/NavBar"
 import Login from "./components/Login"
+import Home from "./components/Home"
 import './index.css'
 import {
   BrowserRouter,
@@ -14,6 +15,7 @@ function App() {
 
       <NavBar />
       <Routes>
+        <Route path="/" element={<Home/>}></Route>
         <Route path="/signup" element={<Signup/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
       </Routes>

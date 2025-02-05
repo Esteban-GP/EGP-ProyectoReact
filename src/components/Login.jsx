@@ -8,10 +8,10 @@ const Login = () => {
     async function checkUser() {
         const users = await fetch('http://localhost:5000/users');
         const usersData = await users.json();
-        const userExists = usersData.some(user => user.email === email && user.password === password);
+        const user = usersData.find(user => user.email === email && user.password === password);
 
-        if (userExists) {
-            if (userExists.type === 'admin') {
+        if (user) {
+            if (user.type === 'admin') {
                 localStorage.setItem('isAdmin', true);
             }
             localStorage.setItem('isLogged', true);
