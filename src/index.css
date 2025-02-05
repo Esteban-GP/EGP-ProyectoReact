@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Formula1Regular';
+    src: url('fonts/Formula1Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Definir la fuente Formula1-Bold */
+@font-face {
+    font-family: 'Formula1-Bold';
+    src: url('/fonts/Formula1-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Definir la fuente Formula1-Wide */
+@font-face {
+    font-family: 'Formula1-Wide';
+    src: url('/fonts/Formula1-Wide.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}

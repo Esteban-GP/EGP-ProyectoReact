@@ -1,10 +1,12 @@
 import NavBar from "./fragmentos/NavBar"
+import Login from "./components/Login"
 import './index.css'
 import {
   BrowserRouter,
   Route,
   Routes,
 } from "react-router-dom";
+import Signup from "./components/Signup";
 
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
 
       <NavBar />
       <Routes>
-        <Route path="/"></Route>
+        <Route path="/signup" element={<Signup/>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
       </Routes>
 
     </BrowserRouter>

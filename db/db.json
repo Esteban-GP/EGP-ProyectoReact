@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "792a",
+      "email": "estebangp2003@gmail.com",
+      "password": "renaido",
+      "type": "admin"
+    },
+    {
+      "id": "8755",
+      "email": "borjamp@gmail.com",
+      "password": "abc123",
+      "type": "user"
+    }
+  ]
+}
