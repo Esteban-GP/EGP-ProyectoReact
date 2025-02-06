@@ -12,5 +12,31 @@
       "password": "abc123",
       "type": "user"
     }
+  ],
+  "products":[
+    {
+      "id": "1",
+      "name": "Ferrari Shirt",
+      "price": 70,
+      "img": "https://www.cocacola.es/content/dam/GO/CokeZone/Spain/2019/Products/COCA-COLA-ORIGINAL-330ML-24PACK-1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Ferrari Shirt",
+      "price": 1.5,
+      "img": "https://www.cocacola.es/content/dam/GO/CokeZone/Spain/2019/Products/FANTA-NARANJA-330ML-24PACK-1.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Ferrari Shirt",
+      "price": 1.5,
+      "img": "https://www.cocacola.es/content/dam/GO/CokeZone/Spain/2019/Products/AQUARIUS-LIMON-330ML-24PACK-1.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Ferrari Shirt",
+      "price": 1.5,
+      "img": "https://www.cocacola.es/content/dam/GO/CokeZone/Spain/2019/Products/NESTEA-LIMON-330ML-24PACK-1.jpg"
+    }
   ]
 }
