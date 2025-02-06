@@ -1,42 +1,61 @@
 {
   "users": [
     {
-      "id": "792a",
+      "username": "Esteban",
       "email": "estebangp2003@gmail.com",
-      "password": "renaido",
-      "type": "admin"
+      "type": "admin",
+      "id": "792a"
     },
     {
       "id": "8755",
+      "username": "Borja",
       "email": "borjamp@gmail.com",
       "password": "abc123",
       "type": "user"
+    },
+    {
+      "id": "90a5",
+      "username": "Estebomba",
+      "email": "estebomba@gmail.com",
+      "password": "renaido",
+      "type": "user"
     }
   ],
-  "products":[
+  "products": [
     {
       "id": "1",
-      "name": "Ferrari Shirt",
-      "price": 70,
-      "img": "https://www.cocacola.es/content/dam/GO/CokeZone/Spain/2019/Products/COCA-COLA-ORIGINAL-330ML-24PACK-1.jpg"
+      "name": "Ferrari T-Shirt",
+      "price": "59.95",
+      "img": "public/TShirtF-Ferrari.png",
+      "hoverImg": "public/TShirtB-Ferrari.png"
     },
     {
       "id": "2",
-      "name": "Ferrari Shirt",
-      "price": 1.5,
-      "img": "https://www.cocacola.es/content/dam/GO/CokeZone/Spain/2019/Products/FANTA-NARANJA-330ML-24PACK-1.jpg"
+      "name": "Mercedes T-Shirt",
+      "price": "59.95",
+      "img": "public/TShirtF-Mercedes.png",
+      "hoverImg": "public/TShirtB-Mercedes.png"
     },
     {
       "id": "3",
-      "name": "Ferrari Shirt",
-      "price": 1.5,
-      "img": "https://www.cocacola.es/content/dam/GO/CokeZone/Spain/2019/Products/AQUARIUS-LIMON-330ML-24PACK-1.jpg"
+      "name": "RedBull T-Shirt",
+      "price": "59.95",
+      "img": "public/TShirtF-RedBull.png",
+      "hoverImg": "public/TShirtB-RedBull.png"
     },
     {
       "id": "4",
-      "name": "Ferrari Shirt",
-      "price": 1.5,
-      "img": "https://www.cocacola.es/content/dam/GO/CokeZone/Spain/2019/Products/NESTEA-LIMON-330ML-24PACK-1.jpg"
+      "name": "Aston Martin T-Shirt",
+      "price": "59.95",
+      "img": "public/TShirtF-Aston.png",
+      "hoverImg": "public/TShirtB-Aston.png"
+    },
+    {
+      "id": "5",
+      "name": "Mclaren T-Shirt",
+      "price": "59.95",
+      "img": "public/TShirtF-Mclaren.png",
+      "hoverImg": "public/TShirtB-Mclaren.png"
     }
   ]
 }

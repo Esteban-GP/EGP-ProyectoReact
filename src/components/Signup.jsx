@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
 
@@ -18,7 +19,7 @@ const Signup = () => {
                         <span class="block sm:inline">User already exists.</span>
                     </div>`;
         } else {
-            const newUser = { email, password, type: 'user' };
+            const newUser = { username, email, password, type: 'user' };
             const response = await fetch('http://localhost:5000/users', {
                 method: 'POST',
                 headers: {
@@ -52,6 +53,19 @@ const Signup = () => {
             <div className="w-full max-w-md p-8 space-y-8 bg-white rounded shadow-md ">
                 <h2 className="text-2xl font-bold text-center" style={{ fontFamily: 'Formula1-Bold, sans-serif' }}>SIGN UP</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="my-8">
+                        <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+                            Username
+                        </label>
+                        <input
+                            type="text"
+                            id="username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                            className="w-full px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+                        />
+                    </div>
                     <div className="my-8">
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                             Email

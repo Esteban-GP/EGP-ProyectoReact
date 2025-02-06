@@ -5,11 +5,26 @@ import { useEffect, useState } from 'react';
 function NavBar() {
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
     setIsLogged(localStorage.getItem('isLogged'));
     setIsAdmin(localStorage.getItem('isAdmin'));
   }, []);
+
+  useEffect(() => {
+    async function findName(email) {
+      const users = await fetch('http://localhost:5000/users');
+      const usersData = await users.json();
+      const user = usersData.find(user => user.email === email);
+      return user.username;
+    }
+
+    if (isLogged) {
+      const email = localStorage.getItem('email');
+      findName(email).then(name => setUsername(name));
+    }
+  }, [isLogged]);
 
   return (
     <nav className="shadow-lg flex items-center relative z-10 bg-white p-1 shadow-md" style={{ fontFamily: 'Formula1Regular, sans-serif' }}>
@@ -19,7 +34,7 @@ function NavBar() {
       <div className="flex-grow flex items-center">
         <Link to="/" className="px-4">Shop</Link>
         <Link to="/" className="px-4">Teams</Link>
-        {isAdmin && <Link to="/" className="px-4">Dashboard</Link>}
+        {isAdmin && <Link to="/dashboard" className="px-4">Dashboard</Link>}
 
       </div>
       <div className="flex items-center">
@@ -52,6 +67,10 @@ function NavBar() {
                 d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
               />
             </svg>
+
+            <div> 
+              <p className="me-8">{username}</p>
+            </div>
 
             <button
               type="button"
