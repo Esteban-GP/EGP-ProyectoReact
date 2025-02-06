@@ -1,5 +1,6 @@
 import NavBar from "./fragmentos/NavBar"
 import Login from "./components/Login"
+import Signup from "./components/Signup";
 import Home from "./components/Home"
 import './index.css'
 import {
@@ -7,7 +8,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import Signup from "./components/Signup";
+
 
 function App() {
   return (

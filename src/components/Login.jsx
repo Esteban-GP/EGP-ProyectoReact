@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import fondof1 from '/fondof1.png';
+import { Link } from 'react-router-dom';
+
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -64,10 +66,12 @@ const Login = () => {
                     <button
                         type="submit"
                         className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-2 w-full"
-                        onClick={handleSubmit}
                     >
                         Log In
-                    </button>
+                    </button> <br />
+                    <div className="my-8 mx-auto text-center">
+                        <p>Don't have an account?<Link to="/signup" className="px-2 underline font-semibold">Sing Up</Link></p>
+                    </div>
                 </form>
                 <span id="error"></span>
             </div>

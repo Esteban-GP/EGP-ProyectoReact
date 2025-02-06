@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import fondof1 from '/fondof1.png';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
@@ -98,6 +99,9 @@ const Signup = () => {
                     >
                         Log In
                     </button>
+                    <div className="my-8 mx-auto text-center">
+                        <p>Already have an account?<Link to="/login" className="px-2 underline font-semibold">Log In</Link></p>
+                    </div>
                 </form>
                 <div id="error">
                 </div>
