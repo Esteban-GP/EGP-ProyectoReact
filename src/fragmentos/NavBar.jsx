@@ -32,7 +32,7 @@ function NavBar() {
         <img src={f1store1} alt="Logo" className="w-65 px-7 py-7" />
       </Link>
       <div className="flex-grow flex items-center">
-        <Link to="/" className="px-4">Shop</Link>
+        <Link to="/shop" className="px-4">Shop</Link>
         <Link to="/" className="px-4">Teams</Link>
         {isAdmin && <Link to="/dashboard" className="px-4">Dashboard</Link>}
 

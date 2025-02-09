@@ -1,10 +1,11 @@
 {
   "users": [
     {
+      "id": "792a",
       "username": "Esteban",
       "email": "estebangp2003@gmail.com",
-      "type": "admin",
-      "id": "792a"
+      "password": "renaido",
+      "type": "admin"
     },
     {
       "id": "8755",
@@ -26,36 +27,62 @@
       "id": "1",
       "name": "Ferrari T-Shirt",
       "price": "59.95",
-      "img": "public/TShirtF-Ferrari.png",
-      "hoverImg": "public/TShirtB-Ferrari.png"
+      "img": "/TShirtF-Ferrari.png",
+      "hoverImg": "/TShirtB-Ferrari.png",
+      "team": "ferrari",
+      "type": "apparel"
     },
     {
       "id": "2",
       "name": "Mercedes T-Shirt",
       "price": "59.95",
-      "img": "public/TShirtF-Mercedes.png",
-      "hoverImg": "public/TShirtB-Mercedes.png"
+      "img": "/TShirtF-Mercedes.png",
+      "hoverImg": "/TShirtB-Mercedes.png",
+      "team": "mercedes",
+      "type": "apparel"
     },
     {
       "id": "3",
       "name": "RedBull T-Shirt",
       "price": "59.95",
-      "img": "public/TShirtF-RedBull.png",
-      "hoverImg": "public/TShirtB-RedBull.png"
+      "img": "/TShirtF-RedBull.png",
+      "hoverImg": "/TShirtB-RedBull.png",
+      "team": "redbull",
+      "type": "apparel"
     },
     {
       "id": "4",
       "name": "Aston Martin T-Shirt",
       "price": "59.95",
-      "img": "public/TShirtF-Aston.png",
-      "hoverImg": "public/TShirtB-Aston.png"
+      "img": "/TShirtF-Aston.png",
+      "hoverImg": "/TShirtB-Aston.png",
+      "team": "aston",
+      "type": "apparel"
     },
     {
       "id": "5",
       "name": "Mclaren T-Shirt",
       "price": "59.95",
-      "img": "public/TShirtF-Mclaren.png",
-      "hoverImg": "public/TShirtB-Mclaren.png"
+      "img": "/TShirtF-Mclaren.png",
+      "hoverImg": "/TShirtB-Mclaren.png",
+      "team": "mclaren",
+      "type": "apparel"
+    },
+    {
+      "id": "6",
+      "name": "Mclaren T-",
+      "price": "59.95",
+      "img": "/TShirtF-Mclaren.png",
+      "team": "mclaren",
+      "type": "apparel"
+    },
+    {
+      "id": "7",
+      "name": "Mclaren T-Shirt",
+      "price": "59.95",
+      "img": "/aston-logo.svg",
+      "team": "mclaren",
+      "type": "collectable"
     }
   ]
 }

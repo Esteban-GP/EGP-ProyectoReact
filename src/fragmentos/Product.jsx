@@ -9,7 +9,8 @@ function Product({ product }) {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className='relative w-full h-70'>
+            {product.hoverImg &&
+            <div className='relative mx-auto w-50 h-70'>
                 <img 
                     src={product.img} 
                     alt={product.name} 
@@ -21,6 +22,14 @@ function Product({ product }) {
                     className={`absolute top-0 left-0 w-full h-full object-cover rounded-md transition-opacity duration-700 ${isHovered ? 'opacity-100' : 'opacity-0'}`} 
                 />
             </div>
+            }
+            {!product.hoverImg &&
+            <img 
+                src={product.img} 
+                alt={product.name} 
+                className='w-60 h-70 object-cover rounded-md mx-auto'
+            />
+            }
             <h3 className='text-xl font-bold mt-2'>{product.name}</h3>
             <p className='text-gray-600 text-right text-bold'>{product.price} €</p>
         </div>

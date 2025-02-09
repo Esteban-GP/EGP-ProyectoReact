@@ -43,10 +43,15 @@ function Dashboard() {
 
     function editUser(id) {
         return async () => {
+            const users = await fetch('http://localhost:5000/users');
+            const usersData = await users.json();
+            const user1 = usersData.find(user => user.id === id);
+
+            const password = user1.password;
             const username = document.getElementById(`username-${id}`).value;
             const email = document.getElementById(`email-${id}`).value;
             const type = document.getElementById(`type-${id}`).value;
-            const user = { username, email, type };
+            const user = { id, username, email, password, type };
             const response = await fetch(`http://localhost:5000/users/${id}`, {
                 method: 'PUT',
                 headers: {

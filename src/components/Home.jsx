@@ -4,6 +4,7 @@ import Product from "../fragmentos/Product"
 
 function Home() {
     const [products, setProducts] = useState([]);
+    const highlightedProducts = ["1", "2", "3", "4", "5"];
 
     useEffect(() => {
         async function getProducts() {
@@ -33,7 +34,9 @@ function Home() {
             <hr className='mb-20 mt-6 w-100 mx-auto ring-1' />
             <div className='grid grid-cols-5 gap-4 mx-50 mb-50'>
                 {products.map(product => 
-                    <Product key={product.id} product={product} />)}
+                    (highlightedProducts.includes(product.id) &&
+                        <Product key={product.id} product={product} />))
+                }
             </div>
         </div>
     );
