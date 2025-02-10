@@ -1,5 +1,4 @@
 import NavBar from "./fragmentos/NavBar"
-import Footer from "./fragmentos/Footer"
 import Login from "./components/Login"
 import Signup from "./components/Signup";
 import Home from "./components/Home"
@@ -11,9 +10,28 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import { useState, useEffect } from 'react';
 
 
 function App() {
+  const [products, setProducts] = useState([]);
+
+   useEffect(() => {
+          async function getProducts() {
+              try {
+                  const response = await fetch('http://localhost:5000/products');
+                  if (!response.ok) {
+                      throw new Error('Error fetching products');
+                  }
+                  const data = await response.json();
+                  setProducts(data); // Assuming data is an array of products
+              } catch (error) {
+                  console.error('Error:', error);
+              }
+          }
+          getProducts();
+      }, []);
+
   return (
     <BrowserRouter>
 
@@ -23,9 +41,8 @@ function App() {
         <Route path="/signup" element={<Signup/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/dashboard" element={<Dashboard/>}></Route>
-        <Route path="/shop" element={<Shop/>}></Route>
+        <Route path="/shop" element={<Shop products={products}/>}></Route>
       </Routes>
-      <Footer />
 
     </BrowserRouter>
   ) 

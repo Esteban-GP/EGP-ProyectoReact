@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import { useState } from 'react';
 
 function Product({ product }) {

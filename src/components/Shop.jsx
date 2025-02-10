@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import Product from "../fragmentos/Product"
 
-function Shop() {
-    const [products, setProducts] = useState([]);
+function Shop({ products }) {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [ferrariFilter, setFerrariFilter] = useState(false);
     const [mercedesFilter, setMercedesFilter] = useState(false);
@@ -16,22 +15,6 @@ function Shop() {
     const [williamsFilter, setWilliamsFilter] = useState(false);
     const [apparelFilter, setApparelFilter] = useState(false);
     const [collectablesFilter, setCollectablesFilter] = useState(false);
-
-    useEffect(() => {
-        async function getProducts() {
-            try {
-                const response = await fetch('http://localhost:5000/products');
-                if (!response.ok) {
-                    throw new Error('Error fetching products');
-                }
-                const data = await response.json();
-                setProducts(data); // Assuming data is an array of products
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-        getProducts();
-    }, []);
 
     useEffect(() => {
         updateList();
