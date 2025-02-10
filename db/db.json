@@ -73,6 +73,7 @@
       "name": "Mclaren T-",
       "price": "59.95",
       "img": "/TShirtF-Mclaren.png",
+      "hoverImg": "",
       "team": "mclaren",
       "type": "apparel"
     },
@@ -81,6 +82,7 @@
       "name": "Mclaren T-Shirt",
       "price": "59.95",
       "img": "/aston-logo.svg",
+      "hoverImg": "",
       "team": "mclaren",
       "type": "collectable"
     }

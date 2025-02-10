@@ -70,7 +70,7 @@ const Login = () => {
                         Log In
                     </button> <br />
                     <div className="my-8 mx-auto text-center">
-                        <p>Don't have an account?<Link to="/signup" className="px-2 underline font-semibold">Sing Up</Link></p>
+                        <p>Dont have an account?<Link to="/signup" className="px-2 underline font-semibold">Sing Up</Link></p>
                     </div>
                 </form>
                 <span id="error"></span>

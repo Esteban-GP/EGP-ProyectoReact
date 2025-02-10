@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+
+import { useState } from 'react';
 
 function Product({ product }) {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
         <div 
-            className='p-4 rounded-lg shadow-md bg-gray-50 relative'
+            className='p-4 rounded-lg shadow-md bg-gray-50 relative transition hover:scale-105'
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            {product.hoverImg &&
+            {!product.hoverImg == "" &&
             <div className='relative mx-auto w-50 h-70'>
                 <img 
                     src={product.img} 
@@ -23,7 +25,7 @@ function Product({ product }) {
                 />
             </div>
             }
-            {!product.hoverImg &&
+            {product.hoverImg == "" &&
             <img 
                 src={product.img} 
                 alt={product.name} 

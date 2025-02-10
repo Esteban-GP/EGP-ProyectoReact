@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import banderaf1 from '/banderaf1.gif';
-import Product from "../fragmentos/Product"
 
 function Dashboard() {
     const [products, setProducts] = useState([]);
@@ -84,16 +82,42 @@ function Dashboard() {
                         <option value="admin">Admin</option>
                     </select>
 
-                    <button class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 me-1 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 ms-6" type="button" onClick={editUser(user.id)}>Edit</button>
+                    <button className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 me-1 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 ms-6" type="button" onClick={editUser(user.id)}>Edit</button>
                 </form>
                 )}
             </div>
 
             <h2 className='text-2xl mt-10 mx-12' style={{ fontFamily: 'Formula1Regular, sans-serif'}}>Product Control</h2>
-            <div className='p-4 rounded-lg shadow-md bg-gray-50 relative mx-10 mt-5'>
+            <div className='p-4 rounded-lg shadow-md bg-gray-50 relative mx-10 mt-5 space-y-3'>
+                <label className='ms-1 me-54 font-bold'>Name:</label>
+                <label className='mx-1 me-17 font-bold'>Price:</label>
+                <label className='mx-1 me-54 font-bold'>Image:</label>
+                <label className='mx-1 me-42  font-bold'>Hover Image:</label>
+                <label className='mx-1 me-36 font-bold'>Team:</label>
+                <label className='mx-1 font-bold'>Type:</label>
                 {products.map(product =>
                 <form key={product.id}>
-                    la
+                    <input className="w-60 me-8 px-1 py-1 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200" type="text" name="name" id={`name-${product.id}`} defaultValue={product.name} />
+                    <input className="w-20 me-8 px-1 py-1 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200" type="text" name="price" id={`price-${product.id}`} defaultValue={product.price} />
+                    <input className="w-60 me-8 px-1 py-1 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200" type="text" name="img" id={`img-${product.id}`} defaultValue={product.img} />
+                    <input className="w-60 me-8 px-1 py-1 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200" type="text" name="hoverImg" id={`hoverImg-${product.id}`} defaultValue={product.hoverImg} />
+                    <select className="w-40 me-8 px-1 py-1 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200" name="team" id={`team-${product.id}`} defaultValue={product.team}>
+                        <option value="ferrari">Ferrari</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="redbull">Red Bull</option>
+                        <option value="aston">Aston Martin</option>
+                        <option value="mclaren">McLaren</option>
+                        <option value="alpine">Alpine</option>
+                        <option value="haas">Haas</option>
+                        <option value="sauber">Kick Sauber</option>
+                        <option value="rb">Visa CashApp RB</option>
+                        <option value="williams">Williams</option>
+                    </select>
+
+                    <select className="w-40 me-8 px-1 py-1 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200" name="type" id={`type-${product.id}`} defaultValue={product.type}>
+                        <option value="apparel">Apparel</option>
+                        <option value="collectable">Collectable</option>
+                    </select>
                 </form>
                 )}
             </div>
