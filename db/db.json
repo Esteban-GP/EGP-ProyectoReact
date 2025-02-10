@@ -70,20 +70,65 @@
     },
     {
       "id": "6",
-      "name": "Mclaren T-",
+      "name": "Alpine T-Shirt",
       "price": "59.95",
-      "img": "/TShirtF-Mclaren.png",
-      "hoverImg": "",
-      "team": "mclaren",
+      "img": "/TShirtF-Alpine.png",
+      "hoverImg": "/TShirtB-Alpine.png",
+      "team": "alpine",
       "type": "apparel"
     },
     {
       "id": "7",
-      "name": "Mclaren T-Shirt",
+      "name": "RB T-Shirt",
       "price": "59.95",
-      "img": "/aston-logo.svg",
+      "img": "/TShirtF-RB.png",
+      "hoverImg": "/TShirtB-RB.png",
+      "team": "rb",
+      "type": "apparel"
+    },
+    {
+      "id": "8",
+      "name": "Williams T-Shirt",
+      "price": "59.95",
+      "img": "/TShirtF-Williams.png",
+      "hoverImg": "/TShirtB-Williams.png",
+      "team": "williams",
+      "type": "apparel"
+    },
+    {
+      "id": "9",
+      "name": "Haas T-Shirt",
+      "price": "59.95",
+      "img": "/TShirtF-Haas.png",
+      "hoverImg": "/TShirtB-Haas.png",
+      "team": "haas",
+      "type": "apparel"
+    },
+    {
+      "id": "10",
+      "name": "Sauber T-Shirt",
+      "price": "59.95",
+      "img": "/TShirtF-Sauber.png",
+      "hoverImg": "/TShirtB-Sauber.png",
+      "team": "sauber",
+      "type": "apparel"
+    },
+    {
+      "id": "11",
+      "name": "Ferrari Cap",
+      "price": "24.95",
+      "img": "/Cap-Ferrari.png",
       "hoverImg": "",
-      "team": "mclaren",
+      "team": "ferrari",
+      "type": "apparel"
+    },
+    {
+      "id": "12",
+      "name": "Ferrari Bottle",
+      "price": "24.95",
+      "img": "/Bottle-Ferrari.png",
+      "hoverImg": "",
+      "team": "ferrari",
       "type": "collectable"
     }
   ]

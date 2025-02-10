@@ -1,4 +1,5 @@
 import NavBar from "./fragmentos/NavBar"
+import Footer from "./fragmentos/Footer"
 import Login from "./components/Login"
 import Signup from "./components/Signup";
 import Home from "./components/Home"
@@ -24,6 +25,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}></Route>
         <Route path="/shop" element={<Shop/>}></Route>
       </Routes>
+      <Footer />
 
     </BrowserRouter>
   ) 

@@ -51,7 +51,7 @@ function Shop() {
             if (astonFilter && product.team === "aston") return true;
             if (alpineFilter && product.team === "alpine") return true;
             if (rbFilter && product.team === "rb") return true;
-            if (sauberFilter && product.team === "kick") return true;
+            if (sauberFilter && product.team === "sauber") return true;
             if (haasFilter && product.team === "haas") return true;
             if (williamsFilter && product.team === "williams") return true;
             return false;
@@ -77,7 +77,7 @@ function Shop() {
     };
 
     return (
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 mb-30">
             <h2 className='text-5xl text-center mt-10' style={{ fontFamily: 'Formula1Regular, sans-serif' }}>Shop</h2>
             <hr className='mb-20 mt-6 w-150 mx-auto ring-1' />
             <div className="flex flex-center">
