@@ -130,6 +130,33 @@
       "hoverImg": "",
       "team": "ferrari",
       "type": "collectable"
+    },
+    {
+      "id": "13",
+      "name": "Ferrari Lego",
+      "price": "219.95",
+      "img": "/Lego-Ferrari.jpg",
+      "hoverImg": "",
+      "team": "ferrari",
+      "type": "collectable"
+    },
+    {
+      "id": "14",
+      "name": "Mercedes Lego",
+      "price": "219.95",
+      "img": "/Lego-Mercedes.jpg",
+      "hoverImg": "",
+      "team": "mercedes",
+      "type": "collectable"
+    },
+    {
+      "id": "14",
+      "name": "McLaren Lego",
+      "price": "219.95",
+      "img": "/Lego-McLaren.jpg",
+      "hoverImg": "",
+      "team": "mclaren",
+      "type": "collectable"
     }
   ]
 }
