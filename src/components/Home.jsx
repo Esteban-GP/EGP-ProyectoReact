@@ -2,26 +2,8 @@ import { useState, useEffect } from 'react';
 import banderaf1 from '/banderaf1.gif';
 import Product from "../fragmentos/Product"
 
-function Home() {
-    const [products, setProducts] = useState([]);
+function Home({ products }) {
     const highlightedProducts = ["1", "2", "3", "4", "5"];
-
-    useEffect(() => {
-        async function getProducts() {
-            try {
-                const response = await fetch('http://localhost:5000/products');
-                if (!response.ok) {
-                    throw new Error('Error fetching products');
-                }
-                const data = await response.json();
-                setProducts(data); // Assuming data is an array of products
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-
-        getProducts();
-    }, []);
 
     return (
         <div>

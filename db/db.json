@@ -27,8 +27,9 @@
       "id": "1",
       "name": "Ferrari T-Shirt",
       "price": "59.95",
-      "img": "/TShirtF-Ferrari.png",
-      "hoverImg": "/TShirtB-Ferrari.png",
+      "img": "/ferrari/TShirtF-Ferrari.png",
+      "hoverImg": "/ferrari/TShirtB-Ferrari.png",
+      "description": "Premium Ferrari T-Shirt crafted from 100% cotton, combining comfort with a sleek design.",
       "team": "ferrari",
       "type": "apparel"
     },
@@ -36,8 +37,9 @@
       "id": "2",
       "name": "Mercedes T-Shirt",
       "price": "59.95",
-      "img": "/TShirtF-Mercedes.png",
-      "hoverImg": "/TShirtB-Mercedes.png",
+      "img": "/mercedes/TShirtF-Mercedes.png",
+      "hoverImg": "/mercedes/TShirtB-Mercedes.png",
+      "description": "High-quality Mercedes T-Shirt featuring a soft cotton fabric and a modern fit.",
       "team": "mercedes",
       "type": "apparel"
     },
@@ -45,8 +47,9 @@
       "id": "3",
       "name": "RedBull T-Shirt",
       "price": "59.95",
-      "img": "/TShirtF-RedBull.png",
-      "hoverImg": "/TShirtB-RedBull.png",
+      "img": "/redbull/TShirtF-RedBull.png",
+      "hoverImg": "/redbull/TShirtB-RedBull.png",
+      "description": "Stylish RedBull T-Shirt made from breathable cotton, designed for ultimate comfort.",
       "team": "redbull",
       "type": "apparel"
     },
@@ -54,8 +57,9 @@
       "id": "4",
       "name": "Aston Martin T-Shirt",
       "price": "59.95",
-      "img": "/TShirtF-Aston.png",
-      "hoverImg": "/TShirtB-Aston.png",
+      "img": "/aston/TShirtF-Aston.png",
+      "hoverImg": "/aston/TShirtB-Aston.png",
+      "description": "Elegant Aston Martin T-Shirt crafted from premium cotton, perfect for motorsport fans.",
       "team": "aston",
       "type": "apparel"
     },
@@ -63,8 +67,9 @@
       "id": "5",
       "name": "Mclaren T-Shirt",
       "price": "59.95",
-      "img": "/TShirtF-Mclaren.png",
-      "hoverImg": "/TShirtB-Mclaren.png",
+      "img": "/mclaren/TShirtF-Mclaren.png",
+      "hoverImg": "/mclaren/TShirtB-Mclaren.png",
+      "description": "Official McLaren T-Shirt with a dynamic design, offering both comfort and style.",
       "team": "mclaren",
       "type": "apparel"
     },
@@ -72,8 +77,9 @@
       "id": "6",
       "name": "Alpine T-Shirt",
       "price": "59.95",
-      "img": "/TShirtF-Alpine.png",
-      "hoverImg": "/TShirtB-Alpine.png",
+      "img": "/alpine/TShirtF-Alpine.png",
+      "hoverImg": "/alpine/TShirtB-Alpine.png",
+      "description": "Lightweight Alpine T-Shirt made from soft cotton, ensuring all-day comfort.",
       "team": "alpine",
       "type": "apparel"
     },
@@ -81,8 +87,9 @@
       "id": "7",
       "name": "RB T-Shirt",
       "price": "59.95",
-      "img": "/TShirtF-RB.png",
-      "hoverImg": "/TShirtB-RB.png",
+      "img": "/rb/TShirtF-RB.png",
+      "hoverImg": "/rb/TShirtB-RB.png",
+      "description": "Trendy RB T-Shirt with a sleek fit, made from high-quality cotton for durability.",
       "team": "rb",
       "type": "apparel"
     },
@@ -90,8 +97,9 @@
       "id": "8",
       "name": "Williams T-Shirt",
       "price": "59.95",
-      "img": "/TShirtF-Williams.png",
-      "hoverImg": "/TShirtB-Williams.png",
+      "img": "/williams/TShirtF-Williams.png",
+      "hoverImg": "/williams/TShirtB-Williams.png",
+      "description": "Comfortable Williams T-Shirt featuring an athletic fit and breathable fabric.",
       "team": "williams",
       "type": "apparel"
     },
@@ -99,8 +107,9 @@
       "id": "9",
       "name": "Haas T-Shirt",
       "price": "59.95",
-      "img": "/TShirtF-Haas.png",
-      "hoverImg": "/TShirtB-Haas.png",
+      "img": "/haas/TShirtF-Haas.png",
+      "hoverImg": "/haas/TShirtB-Haas.png",
+      "description": "Casual Haas T-Shirt with a bold design, made for both style and ease.",
       "team": "haas",
       "type": "apparel"
     },
@@ -108,8 +117,9 @@
       "id": "10",
       "name": "Sauber T-Shirt",
       "price": "59.95",
-      "img": "/TShirtF-Sauber.png",
-      "hoverImg": "/TShirtB-Sauber.png",
+      "img": "/sauber/TShirtF-Sauber.png",
+      "hoverImg": "/sauber/TShirtB-Sauber.png",
+      "description": "Versatile Sauber T-Shirt designed with high-quality cotton for a relaxed fit.",
       "team": "sauber",
       "type": "apparel"
     },
@@ -117,8 +127,9 @@
       "id": "11",
       "name": "Ferrari Cap",
       "price": "24.95",
-      "img": "/Cap-Ferrari.png",
+      "img": "/ferrari/Cap-Ferrari.png",
       "hoverImg": "",
+      "description": "Stylish Ferrari cap with the iconic logo, perfect for any motorsport enthusiast.",
       "team": "ferrari",
       "type": "apparel"
     },
@@ -126,8 +137,9 @@
       "id": "12",
       "name": "Ferrari Bottle",
       "price": "24.95",
-      "img": "/Bottle-Ferrari.png",
+      "img": "/ferrari/Bottle-Ferrari.png",
       "hoverImg": "",
+      "description": "Durable Ferrari water bottle, ideal for staying hydrated on the go.",
       "team": "ferrari",
       "type": "collectable"
     },
@@ -135,8 +147,9 @@
       "id": "13",
       "name": "Ferrari Lego",
       "price": "219.95",
-      "img": "/Lego-Ferrari.jpg",
+      "img": "/ferrari/Lego-Ferrari.jpg",
       "hoverImg": "",
+      "description": "Detailed Ferrari Lego set, a must-have for collectors and fans of the brand.",
       "team": "ferrari",
       "type": "collectable"
     },
@@ -144,19 +157,83 @@
       "id": "14",
       "name": "Mercedes Lego",
       "price": "219.95",
-      "img": "/Lego-Mercedes.jpg",
+      "img": "/mercedes/Lego-Mercedes.jpg",
       "hoverImg": "",
+      "description": "Intricate Mercedes Lego set, perfect for building and displaying.",
       "team": "mercedes",
       "type": "collectable"
     },
     {
-      "id": "14",
+      "id": "15",
       "name": "McLaren Lego",
       "price": "219.95",
-      "img": "/Lego-McLaren.jpg",
+      "img": "/mclaren/Lego-McLaren.jpg",
       "hoverImg": "",
+      "description": "Exclusive McLaren Lego set, great for fans and collectors alike.",
       "team": "mclaren",
       "type": "collectable"
+    }
+  ],
+  "teams":[
+    {
+      "id": "1",
+      "name": "Ferrari",
+      "logo": "/ferrari/ferrari-logo.svg",
+      "description": "Scuderia Ferrari is the racing team division of the Ferrari automobile marque. It is the oldest surviving and most successful Formula One team, having competed in every world championship since the 1950 Formula One season. Ferrari has a rich history in motorsport, with numerous championships and victories. The team is known for its passionate fan base, often referred to as the 'Tifosi'. Ferrari's iconic red cars and prancing horse logo are recognized worldwide. The team has produced legendary drivers and continues to be a major contender in the sport." 
+    },
+    {
+      "id": "2",
+      "name": "Mercedes",
+      "logo": "mercedes/mercedes-logo.svg",
+      "description": "Mercedes-AMG Petronas Formula One Team is the Formula One racing team of Mercedes-Benz, competing in the Formula One World Championship."
+    },
+    {
+      "id": "3",
+      "name": "Red Bull Racing",
+      "logo": "redbull/redbull-logo.svg",
+      "description": "Red Bull Racing, also simply known as Red Bull or RBR, is a Formula One racing team, racing under an Austrian licence and based in the United Kingdom."
+    },
+    {
+      "id": "4",
+      "name": "McLaren",
+      "logo": "mclaren/mclaren-logo.svg",
+      "description": "McLaren Racing Limited is a British motor racing team based at the McLaren Technology Centre in Woking, Surrey, England."
+    },
+    {
+      "id": "5",
+      "name": "Aston Martin",
+      "logo": "aston/aston-logo.svg",
+      "description": "Aston Martin Cognizant Formula One Team is a British manufacturer of luxury sports cars and grand tourers."
+    },
+    {
+      "id": "6",
+      "name": "Alpine",
+      "logo": "alpine/alpine-logo.svg",
+      "description": "Alpine F1 Team is a Formula One constructor which made its debut in the 2021 Formula One World Championship."
+    },
+    {
+      "id": "7",
+      "name": "Visa Cash App RB",
+      "logo": "/rb-logo.svg",
+      "description": "Visa Cash App RB is an Italian Formula One racing team and constructor."
+    },
+    {
+      "id": "8",
+      "name": "Williams",
+      "logo": "/williams-logo.svg",
+      "description": "Williams Grand Prix Engineering Limited is a British Formula One motor racing team and constructor."
+    },
+    {
+      "id": "9",
+      "name": "Alfa Romeo",
+      "logo": "/alfa-logo.svg",
+      "description": "Alfa Romeo Racing Orlen is a Swiss Formula One team and constructor."
+    },
+    {
+      "id": "10",
+      "name": "Haas",
+      "logo": "/haas-logo.svg",
+      "description": "Haas F1 Team is an American Formula One racing team established by NASCAR Cup Series team co-owner Gene Haas."
     }
   ]
 }

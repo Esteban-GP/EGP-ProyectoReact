@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import Product from "../fragmentos/Product"
 
-function Shop({ products }) {
+function Shop() {
+    const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [ferrariFilter, setFerrariFilter] = useState(false);
     const [mercedesFilter, setMercedesFilter] = useState(false);
@@ -10,11 +11,27 @@ function Shop({ products }) {
     const [astonFilter, setAstonFilter] = useState(false);
     const [alpineFilter, setAlpineFilter] = useState(false);
     const [rbFilter, setRbFilter] = useState(false);
-    const [sauberFilter, setSauberFilter] = useState(false);
+    const [kickFilter, setKickFilter] = useState(false);
     const [haasFilter, setHaasFilter] = useState(false);
     const [williamsFilter, setWilliamsFilter] = useState(false);
     const [apparelFilter, setApparelFilter] = useState(false);
     const [collectablesFilter, setCollectablesFilter] = useState(false);
+
+    useEffect(() => {
+        async function getProducts() {
+            try {
+                const response = await fetch('http://localhost:5000/products');
+                if (!response.ok) {
+                    throw new Error('Error fetching products');
+                }
+                const data = await response.json();
+                setProducts(data); // Assuming data is an array of products
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        getProducts();
+    }, []);
 
     useEffect(() => {
         updateList();
@@ -22,7 +39,7 @@ function Shop({ products }) {
 
     useEffect(() => {
         updateList();
-    }, [ferrariFilter, mercedesFilter, redbullFilter, mclarenFilter, astonFilter, alpineFilter, rbFilter, sauberFilter, haasFilter, williamsFilter, apparelFilter, collectablesFilter]);
+    }, [ferrariFilter, mercedesFilter, redbullFilter, mclarenFilter, astonFilter, alpineFilter, rbFilter, kickFilter, haasFilter, williamsFilter, apparelFilter, collectablesFilter]);
 
     function updateList() {
         let filtered = []
@@ -34,7 +51,7 @@ function Shop({ products }) {
             if (astonFilter && product.team === "aston") return true;
             if (alpineFilter && product.team === "alpine") return true;
             if (rbFilter && product.team === "rb") return true;
-            if (sauberFilter && product.team === "sauber") return true;
+            if (kickFilter && product.team === "kick") return true;
             if (haasFilter && product.team === "haas") return true;
             if (williamsFilter && product.team === "williams") return true;
             return false;
@@ -49,8 +66,8 @@ function Shop({ products }) {
         setFilteredProducts(secondFilter);
     };
 
-    const [showCheckboxes, setShowCheckboxes] = useState(true);
-    const [showTypes, setShowTypes] = useState(true);
+    const [showCheckboxes, setShowCheckboxes] = useState(false);
+    const [showTypes, setShowTypes] = useState(false);
 
     const showTeams = () => {
         setShowCheckboxes(!showCheckboxes);
@@ -60,11 +77,11 @@ function Shop({ products }) {
     };
 
     return (
-        <div className="container mx-auto px-4 mb-30">
+        <div className="container mx-auto px-4">
             <h2 className='text-5xl text-center mt-10' style={{ fontFamily: 'Formula1Regular, sans-serif' }}>Shop</h2>
-            <hr className='mb-20 mt-6 w-150 mx-auto ring-1' />
+            <hr className='mb-20 mt-6 w-full mx-auto ring-1' />
             <div className="flex flex-center">
-                <div className='w-50 ' style={{ fontFamily: 'Formula1Regular, sans-serif' }}>
+                <div className='mb-4 w-50 ' style={{ fontFamily: 'Formula1Regular, sans-serif' }}>
                     <button onClick={showTeams} className="mt-2">
                         {showCheckboxes ? (
                             <div className="flex items-center">
@@ -84,16 +101,16 @@ function Shop({ products }) {
                     </button>
                     {showCheckboxes && (
                         <div className="mt-2 space-y-5">
-                            <label className="flex items-center space-x-2"><input type="checkbox" value="ferrari" checked={ferrariFilter} onChange={() => setFerrariFilter(!ferrariFilter)} /><img src="/ferrari-logo.svg" alt="Ferrari" className="w-10"/> <span>Ferrari</span></label>
-                            <label className="flex items-center space-x-2"><input type="checkbox" value="mercedes" checked={mercedesFilter} onChange={() => setMercedesFilter(!mercedesFilter)} /><img src="/mercedes-logo.png" alt="Mercedes" className="w-9"/>  <span>Mercedes</span></label>
-                            <label className="flex items-center space-x-2"><input type="checkbox" value="redbull" checked={redbullFilter} onChange={() => setRedbullFilter(!redbullFilter)} /><img src="/redbull-logo.svg" alt="Red Bull" className="w-10"/> <span>Red Bull</span></label>
-                            <label className="flex items-center space-x-2"><input type="checkbox" value="mclaren" checked={mclarenFilter} onChange={() => setMclarenFilter(!mclarenFilter)} /><img src="/mclaren-logo.svg" alt="McLaren" className="w-10"/> <span>McLaren</span></label>
-                            <label className="flex items-center space-x-2"><input type="checkbox" value="aston" checked={astonFilter} onChange={() => setAstonFilter(!astonFilter)} /><img src="/aston-logo.svg" alt="Aston Martin" className="w-10"/> <span>Aston Martin</span></label>
-                            <label className="flex items-center space-x-2"><input type="checkbox" value="alpine" checked={alpineFilter} onChange={() => setAlpineFilter(!alpineFilter)} /><img src="/alpine-logo.png" alt="Alpine" className="w-9"/> <span>Alpine</span></label>
-                            <label className="flex items-center space-x-2"><input type="checkbox" value="rb" checked={rbFilter} onChange={() => setRbFilter(!rbFilter)} /><img src="/rb-logo.png" alt="RB Cash App" className="w-10"/> <span>RB Cash App</span></label>
-                            <label className="flex items-center space-x-2"><input type="checkbox" value="sauber" checked={sauberFilter} onChange={() => setSauberFilter(!sauberFilter)} /><img src="/sauber-logo.png" alt="Kick Sauber" className="w-9"/> <span>Kick Sauber</span></label>
-                            <label className="flex items-center space-x-2"><input type="checkbox" value="haas" checked={haasFilter} onChange={() => setHaasFilter(!haasFilter)} /><img src="/haas-logo.png" alt="Haas" className="w-9"/> <span>Haas</span></label>
-                            <label className="flex items-center space-x-2"><input type="checkbox" value="williams" checked={williamsFilter} onChange={() => setWilliamsFilter(!williamsFilter)} /><img src="/williams-logo.png" alt="Williams" className="w-9"/> <span>Williams</span></label>
+                            <label className="flex items-center space-x-2"><input type="checkbox" value="ferrari" checked={ferrariFilter} onChange={() => setFerrariFilter(!ferrariFilter)} /><img src="ferrari/ferrari-logo.svg" alt="Ferrari" className="w-10"/> <span>Ferrari</span></label>
+                            <label className="flex items-center space-x-2"><input type="checkbox" value="mercedes" checked={mercedesFilter} onChange={() => setMercedesFilter(!mercedesFilter)} /><img src="mercedes/mercedes-logo.png" alt="Mercedes" className="w-9"/>  <span>Mercedes</span></label>
+                            <label className="flex items-center space-x-2"><input type="checkbox" value="redbull" checked={redbullFilter} onChange={() => setRedbullFilter(!redbullFilter)} /><img src="redbull/redbull-logo.svg" alt="Red Bull" className="w-10"/> <span>Red Bull</span></label>
+                            <label className="flex items-center space-x-2"><input type="checkbox" value="mclaren" checked={mclarenFilter} onChange={() => setMclarenFilter(!mclarenFilter)} /><img src="mclaren/mclaren-logo.svg" alt="McLaren" className="w-10"/> <span>McLaren</span></label>
+                            <label className="flex items-center space-x-2"><input type="checkbox" value="aston" checked={astonFilter} onChange={() => setAstonFilter(!astonFilter)} /><img src="aston/aston-logo.svg" alt="Aston Martin" className="w-10"/> <span>Aston Martin</span></label>
+                            <label className="flex items-center space-x-2"><input type="checkbox" value="alpine" checked={alpineFilter} onChange={() => setAlpineFilter(!alpineFilter)} /><img src="alpine/alpine-logo.png" alt="Alpine" className="w-9"/> <span>Alpine</span></label>
+                            <label className="flex items-center space-x-2"><input type="checkbox" value="rb" checked={rbFilter} onChange={() => setRbFilter(!rbFilter)} /><img src="rb/rb-logo.png" alt="RB Cash App" className="w-10"/> <span>RB Cash App</span></label>
+                            <label className="flex items-center space-x-2"><input type="checkbox" value="kick" checked={kickFilter} onChange={() => setKickFilter(!kickFilter)} /><img src="sauber/sauber-logo.png" alt="Kick Sauber" className="w-9"/> <span>Kick Sauber</span></label>
+                            <label className="flex items-center space-x-2"><input type="checkbox" value="haas" checked={haasFilter} onChange={() => setHaasFilter(!haasFilter)} /><img src="haas/haas-logo.png" alt="Haas" className="w-9"/> <span>Haas</span></label>
+                            <label className="flex items-center space-x-2"><input type="checkbox" value="williams" checked={williamsFilter} onChange={() => setWilliamsFilter(!williamsFilter)} /><img src="williams/williams-logo.png" alt="Williams" className="w-9"/> <span>Williams</span></label>
                         </div>
                     )}
                     <button onClick={showType} className="mt-6">
