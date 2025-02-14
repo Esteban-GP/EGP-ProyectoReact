@@ -66,8 +66,8 @@ function Shop() {
         setFilteredProducts(secondFilter);
     };
 
-    const [showCheckboxes, setShowCheckboxes] = useState(false);
-    const [showTypes, setShowTypes] = useState(false);
+    const [showCheckboxes, setShowCheckboxes] = useState(true);
+    const [showTypes, setShowTypes] = useState(true);
 
     const showTeams = () => {
         setShowCheckboxes(!showCheckboxes);

@@ -177,62 +177,72 @@
   "teams":[
     {
       "id": "1",
+      "nameId": "ferrari",
       "name": "Ferrari",
-      "logo": "/ferrari/ferrari-logo.svg",
+      "img": "/ferrari/ferrari-logo.png",
       "description": "Scuderia Ferrari is the racing team division of the Ferrari automobile marque. It is the oldest surviving and most successful Formula One team, having competed in every world championship since the 1950 Formula One season. Ferrari has a rich history in motorsport, with numerous championships and victories. The team is known for its passionate fan base, often referred to as the 'Tifosi'. Ferrari's iconic red cars and prancing horse logo are recognized worldwide. The team has produced legendary drivers and continues to be a major contender in the sport." 
     },
     {
       "id": "2",
+      "nameId": "mercedes",
       "name": "Mercedes",
-      "logo": "mercedes/mercedes-logo.svg",
+      "img": "mercedes/mercedes-logo.svg",
       "description": "Mercedes-AMG Petronas Formula One Team is the Formula One racing team of Mercedes-Benz, competing in the Formula One World Championship."
     },
     {
       "id": "3",
+      "nameId": "redbull",
       "name": "Red Bull Racing",
-      "logo": "redbull/redbull-logo.svg",
+      "img": "redbull/redbull-logo.svg",
       "description": "Red Bull Racing, also simply known as Red Bull or RBR, is a Formula One racing team, racing under an Austrian licence and based in the United Kingdom."
     },
     {
       "id": "4",
+      "nameId": "mclaren",
       "name": "McLaren",
-      "logo": "mclaren/mclaren-logo.svg",
+      "img": "mclaren/mclaren-logo.svg",
       "description": "McLaren Racing Limited is a British motor racing team based at the McLaren Technology Centre in Woking, Surrey, England."
     },
     {
       "id": "5",
+      "nameId": "aston",
       "name": "Aston Martin",
-      "logo": "aston/aston-logo.svg",
+      "img": "aston/aston-logo.svg",
       "description": "Aston Martin Cognizant Formula One Team is a British manufacturer of luxury sports cars and grand tourers."
     },
     {
       "id": "6",
+      "nameId": "alpine",
       "name": "Alpine",
-      "logo": "alpine/alpine-logo.svg",
+      "img": "alpine/alpine-logo.svg",
       "description": "Alpine F1 Team is a Formula One constructor which made its debut in the 2021 Formula One World Championship."
     },
     {
       "id": "7",
+      "nameId": "rb",
       "name": "Visa Cash App RB",
-      "logo": "/rb-logo.svg",
+      "img": "/rb-logo.svg",
       "description": "Visa Cash App RB is an Italian Formula One racing team and constructor."
     },
     {
       "id": "8",
+      "nameId": "williams",
       "name": "Williams",
-      "logo": "/williams-logo.svg",
+      "img": "/williams-logo.svg",
       "description": "Williams Grand Prix Engineering Limited is a British Formula One motor racing team and constructor."
     },
     {
       "id": "9",
+      "nameId": "sauber",
       "name": "Alfa Romeo",
-      "logo": "/alfa-logo.svg",
+      "img": "/alfa-logo.svg",
       "description": "Alfa Romeo Racing Orlen is a Swiss Formula One team and constructor."
     },
     {
       "id": "10",
+      "nameId": "haas",
       "name": "Haas",
-      "logo": "/haas-logo.svg",
+      "img": "/haas-logo.svg",
       "description": "Haas F1 Team is an American Formula One racing team established by NASCAR Cup Series team co-owner Gene Haas."
     }
   ]

@@ -4,7 +4,7 @@ import Product from "../fragmentos/Product"
 
 function Home({ products }) {
     const highlightedProducts = ["1", "2", "3", "4", "5"];
-
+    
     return (
         <div>
             <div className="inset-0 flex flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${banderaf1})`, backgroundSize: 'cover', height: '100vh', backgroundPosition: 'center' }}>

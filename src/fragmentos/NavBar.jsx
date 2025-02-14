@@ -33,7 +33,7 @@ function NavBar() {
       </Link>
       <div className="flex-grow flex items-center">
         <Link to="/shop" className="px-4">Shop</Link>
-        <Link to="/" className="px-4">Teams</Link>
+        <Link to="/teams" className="px-4">Teams</Link>
         {isAdmin && <Link to="/dashboard" className="px-4">Dashboard</Link>}
 
       </div>
