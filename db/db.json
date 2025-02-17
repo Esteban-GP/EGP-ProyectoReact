@@ -180,70 +180,110 @@
       "nameId": "ferrari",
       "name": "Ferrari",
       "img": "/ferrari/ferrari-logo.png",
-      "description": "Scuderia Ferrari is the racing team division of the Ferrari automobile marque. It is the oldest surviving and most successful Formula One team, having competed in every world championship since the 1950 Formula One season. Ferrari has a rich history in motorsport, with numerous championships and victories. The team is known for its passionate fan base, often referred to as the 'Tifosi'. Ferrari's iconic red cars and prancing horse logo are recognized worldwide. The team has produced legendary drivers and continues to be a major contender in the sport." 
+      "description": "Scuderia Ferrari is the racing team division of the Ferrari automobile marque. It is the oldest surviving and most successful Formula One team, having competed in every world championship since the 1950 Formula One season. Ferrari has a rich history in motorsport, with numerous championships and victories. The team is known for its passionate fan base, often referred to as the 'Tifosi'. Ferrari's iconic red cars and prancing horse logo are recognized worldwide. The team has produced legendary drivers and continues to be a major contender in the sport.",
+      "d1img": "/ferrari/leclerc.png",
+      "d1name": "Charles Leclerc",
+      "d2img": "/ferrari/hamilton.png",
+      "d2name": "Lewis Hamilton"
     },
     {
       "id": "2",
       "nameId": "mercedes",
       "name": "Mercedes",
-      "img": "mercedes/mercedes-logo.svg",
-      "description": "Mercedes-AMG Petronas Formula One Team is the Formula One racing team of Mercedes-Benz, competing in the Formula One World Championship."
+      "img": "/mercedes/mercedes-logo.png",
+      "description": "Mercedes-AMG Petronas Formula One Team is the Formula One racing team of Mercedes-Benz, competing in the Formula One World Championship.",
+      "d1img": "/mercedes/antonelli.png",
+      "d1name": "Andrea Kimi Antonelli",
+      "d2img": "/mercedes/russell.png",
+      "d2name": "George Russell"
     },
     {
       "id": "3",
       "nameId": "redbull",
       "name": "Red Bull Racing",
-      "img": "redbull/redbull-logo.svg",
-      "description": "Red Bull Racing, also simply known as Red Bull or RBR, is a Formula One racing team, racing under an Austrian licence and based in the United Kingdom."
+      "img": "/redbull/redbull-logo.svg",
+      "description": "Red Bull Racing, also simply known as Red Bull or RBR, is a Formula One racing team, racing under an Austrian licence and based in the United Kingdom.",
+      "d1img": "/redbull/verstappen.png",
+      "d1name": "Max Verstappen",
+      "d2img": "/redbull/lawson.png",
+      "d2name": "Liam Lawson"
     },
     {
       "id": "4",
       "nameId": "mclaren",
       "name": "McLaren",
-      "img": "mclaren/mclaren-logo.svg",
-      "description": "McLaren Racing Limited is a British motor racing team based at the McLaren Technology Centre in Woking, Surrey, England."
+      "img": "/mclaren/mclaren-white.png",
+      "description": "McLaren Racing Limited is a British motor racing team based at the McLaren Technology Centre in Woking, Surrey, England.",
+      "d1img": "/mclaren/norris.png",
+      "d1name": "Lando Norris",
+      "d2img": "/mclaren/piastri.png",
+      "d2name": "Oscar Piastri"
     },
     {
       "id": "5",
       "nameId": "aston",
       "name": "Aston Martin",
-      "img": "aston/aston-logo.svg",
-      "description": "Aston Martin Cognizant Formula One Team is a British manufacturer of luxury sports cars and grand tourers."
+      "img": "/aston/aston-logo.svg",
+      "description": "Aston Martin Cognizant Formula One Team is a British manufacturer of luxury sports cars and grand tourers.",
+      "d1img": "/aston/fernando.png",
+      "d1name": "Fernando Alonso",
+      "d2img": "/aston/stroll.png",
+      "d2name": "Lance Stroll"
     },
     {
       "id": "6",
       "nameId": "alpine",
       "name": "Alpine",
-      "img": "alpine/alpine-logo.svg",
-      "description": "Alpine F1 Team is a Formula One constructor which made its debut in the 2021 Formula One World Championship."
+      "img": "/alpine/alpine-white.png",
+      "description": "Alpine F1 Team is a Formula One constructor which made its debut in the 2021 Formula One World Championship.",
+      "d1img": "/alpine/gasly.png",
+      "d1name": "Pierre Gasly",
+      "d2img": "/alpine/doohan.png",
+      "d2name": "Jack Doohan"
     },
     {
       "id": "7",
       "nameId": "rb",
       "name": "Visa Cash App RB",
-      "img": "/rb-logo.svg",
-      "description": "Visa Cash App RB is an Italian Formula One racing team and constructor."
+      "img": "/rb/rb-white.png",
+      "description": "Visa Cash App RB is an Italian Formula One racing team and constructor.",
+      "d1img": "/rb/tsunoda.png",
+      "d1name": "Yuki Tsunoda",
+      "d2img": "/rb/hadjar.png",
+      "d2name": "Isack Hadjar"
     },
     {
       "id": "8",
       "nameId": "williams",
       "name": "Williams",
-      "img": "/williams-logo.svg",
-      "description": "Williams Grand Prix Engineering Limited is a British Formula One motor racing team and constructor."
+      "img": "/williams/williams-logo.png",
+      "description": "Williams Grand Prix Engineering Limited is a British Formula One motor racing team and constructor.",
+      "d1img": "/williams/sainz.png",
+      "d1name": "Carlos Sainz",
+      "d2img": "/williams/albon.png",
+      "d2name": "Alex Albon"
     },
     {
       "id": "9",
       "nameId": "sauber",
-      "name": "Alfa Romeo",
-      "img": "/alfa-logo.svg",
-      "description": "Alfa Romeo Racing Orlen is a Swiss Formula One team and constructor."
+      "name": "Stake Sauber",
+      "img": "/sauber/sauber-white.png",
+      "description": "Alfa Romeo Racing Orlen is a Swiss Formula One team and constructor.",
+      "d1img": "/sauber/hulkenberg.png",
+      "d1name": "Nico Hülkenberg",
+      "d2img": "/sauber/bortoleto.png",
+      "d2name": "Gabriel Bortoleto"
     },
     {
       "id": "10",
       "nameId": "haas",
       "name": "Haas",
-      "img": "/haas-logo.svg",
-      "description": "Haas F1 Team is an American Formula One racing team established by NASCAR Cup Series team co-owner Gene Haas."
+      "img": "/haas/haas-logo.png",
+      "description": "Haas F1 Team is an American Formula One racing team established by NASCAR Cup Series team co-owner Gene Haas.",
+      "d1img": "/haas/ocon.png",
+      "d1name": "Esteban Ocon",
+      "d2img": "/haas/bearman.png",
+      "d2name": "Oliver Bearman"
     }
   ]
 }
