@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard"
 import Shop from "./components/Shop"
 import Team from "./components/Team"
 import FullProduct from "./components/FullProduct"
+import Teams from "./components/Teams"
 import './index.css'
 import {
   BrowserRouter,
@@ -13,6 +14,7 @@ import {
   Routes,
 } from "react-router-dom";
 import { useState, useEffect } from 'react';
+
 
 
 function App() {
@@ -62,6 +64,7 @@ function App() {
         <Route path="/shop" element={<Shop products={products}/>}></Route>
         <Route path="/team/:id" element={<Team products={products} teams={teams}/>}></Route>
         <Route path="/product/:id" element={<FullProduct products={products}/>}></Route>
+        <Route path="/teams" element={<Teams/>}></Route>
       </Routes>
 
     </BrowserRouter>
