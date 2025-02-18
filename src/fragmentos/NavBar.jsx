@@ -1,31 +1,7 @@
 import { Link } from 'react-router-dom';
 import f1store1 from '/f1store1.svg';
-import { useEffect, useState } from 'react';
 
-function NavBar() {
-  const [isLogged, setIsLogged] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [username, setUsername] = useState('');
-
-  useEffect(() => {
-    setIsLogged(localStorage.getItem('isLogged'));
-    setIsAdmin(localStorage.getItem('isAdmin'));
-  }, []);
-
-  useEffect(() => {
-    async function findName(email) {
-      const users = await fetch('http://localhost:5000/users');
-      const usersData = await users.json();
-      const user = usersData.find(user => user.email === email);
-      return user.username;
-    }
-
-    if (isLogged) {
-      const email = localStorage.getItem('email');
-      findName(email).then(name => setUsername(name));
-    }
-  }, [isLogged]);
-
+function NavBar({ onLogout, user }) {
   return (
     <nav className="sticky shadow-lg flex items-center relative z-50 bg-white p-1 shadow-md top-0" style={{ fontFamily: 'Formula1Regular, sans-serif' }}>
       <Link to="/" className="flex-shrink-0">
@@ -34,11 +10,11 @@ function NavBar() {
       <div className="flex-grow flex items-center">
         <Link to="/shop" className="px-4">Shop</Link>
         <Link to="/teams" className="px-4">Teams</Link>
-        {isAdmin && <Link to="/dashboard" className="px-4">Dashboard</Link>}
+        {user && user.type == "admin" && <Link to="/dashboard" className="px-4">Dashboard</Link>}
 
       </div>
       <div className="flex items-center">
-        {!isLogged && (
+        {!user && (
           <div>
             <Link to="/login" className="px-4">Login</Link>
             <Link to="/signup" className="px-4">
@@ -51,7 +27,7 @@ function NavBar() {
             </Link>
           </div>
         )}
-        {isLogged && (
+        {user && (
           <div className='flex items-center'>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -69,19 +45,13 @@ function NavBar() {
             </svg>
 
             <div> 
-              <p className="me-8">{username}</p>
+              <p className="me-8">{user.username}</p>
             </div>
 
             <button
               type="button"
               className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-b focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-2 cursor-pointer"
-              onClick={() => {
-                localStorage.removeItem('isLogged');
-                localStorage.removeItem('email');
-                localStorage.removeItem('isAdmin');
-                setIsLogged(false);
-                window.location.href = '/';
-              }}
+              onClick={onLogout}
             >
               Log Out
             </button>

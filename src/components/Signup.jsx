@@ -2,7 +2,7 @@ import { useState } from 'react';
 import fondof1 from '/fondof1.png';
 import { Link } from 'react-router-dom';
 
-const Signup = () => {
+const Signup = ({ onLogin }) => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -19,7 +19,7 @@ const Signup = () => {
                         <span class="block sm:inline">User already exists.</span>
                     </div>`;
         } else {
-            const newUser = { username, email, password, type: 'user' };
+            const newUser = { username, email, password, type: 'user' , cart: []};
             const response = await fetch('http://localhost:5000/users', {
                 method: 'POST',
                 headers: {
@@ -28,9 +28,7 @@ const Signup = () => {
                 body: JSON.stringify(newUser),
             });
 
-            if (response.ok) {
-                window.location.href = '/';
-            }
+            onLogin(newUser)
         }
     }
 
@@ -42,8 +40,6 @@ const Signup = () => {
                         <span class="block sm:inline">Passwords do not match.</span>
                     </div>`;
         } else {
-            localStorage.setItem('isLogged', true);
-            localStorage.setItem('email', email);
             checkUser();
         };
     }

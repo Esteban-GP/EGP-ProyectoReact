@@ -12,14 +12,17 @@ import {
   BrowserRouter,
   Route,
   Routes,
+  useNavigate,
 } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 
 
-function App() {
+function Layout() {
+  const [user, setUser] = useState(null)
   const [products, setProducts] = useState([]);
   const [teams, setTeams] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getProducts() {
@@ -52,23 +55,39 @@ function App() {
     getTeams();
   }, []);
 
-  return (
-    <BrowserRouter>
+  const handleLogin = (userData) =>{
+    setUser(userData)
+    navigate("/")
+  }
 
-      <NavBar />
+  const handleLogout = () => {
+    setUser(null)
+    navigate("/")
+  }
+
+  return (
+    <>
+      <NavBar onLogout={handleLogout} user={user}/>
       <Routes>
         <Route path="/" element={<Home products={products}/>}></Route>
-        <Route path="/signup" element={<Signup/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/dashboard" element={<Dashboard/>}></Route>
+        <Route path="/signup" element={<Signup onLogin={handleLogin}/>}></Route>
+        <Route path="/login" element={<Login onLogin={handleLogin}/>}></Route>
+        <Route path="/dashboard" element={<Dashboard user={user}/>}></Route>
         <Route path="/shop" element={<Shop products={products}/>}></Route>
         <Route path="/team/:id" element={<Team products={products} teams={teams}/>}></Route>
-        <Route path="/product/:id" element={<FullProduct products={products}/>}></Route>
+        <Route path="/product/:id" element={<FullProduct products={products} user={user}/>}></Route>
         <Route path="/teams" element={<Teams teams={teams}/>}></Route>
       </Routes>
-
-    </BrowserRouter>
+    </>
   ) 
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Layout />
+    </BrowserRouter>
+  );
 }
 
 export default App;

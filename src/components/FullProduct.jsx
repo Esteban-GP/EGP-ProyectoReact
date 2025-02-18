@@ -1,13 +1,24 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function FullProduct({ products }) {
+function FullProduct({ products, user }) {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
         setProduct(products.find((p) => p.id === id));
     }, [products, id]);
+
+    async function addToCart(){
+        user.cart.push(product.id)
+        const response = await fetch(`http://localhost:5000/users/${user.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        });
+    }
 
     return (
         <div className='bg-gray-100 flex flex-col flex-grow mx-auto' style={{ minHeight: 'calc(100vh - 89px)' }}>
@@ -46,7 +57,8 @@ function FullProduct({ products }) {
                             </select>
                         </form>
 
-                        <button className="focus:outline-none text-white mb-20 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-12 py-3 mt-8 mb-2">
+                        <button className="focus:outline-none text-white mb-20 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-12 py-3 mt-8 mb-2"
+                        onClick={addToCart}>
                             Add to Cart
                         </button>
                     </div>

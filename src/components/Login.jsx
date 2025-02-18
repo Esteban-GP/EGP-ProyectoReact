@@ -3,7 +3,7 @@ import fondof1 from '/fondof1.png';
 import { Link } from 'react-router-dom';
 
 
-const Login = () => {
+const Login = ({ onLogin }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -13,12 +13,7 @@ const Login = () => {
         const user = usersData.find(user => user.email === email && user.password === password);
 
         if (user) {
-            if (user.type === 'admin') {
-                localStorage.setItem('isAdmin', true);
-            }
-            localStorage.setItem('isLogged', true);
-            localStorage.setItem('email', email);
-            window.location.href = '/';
+            onLogin(user);
         } else {
             document.getElementById('error').innerHTML = `<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
             <strong class="font-bold">Error!</strong>

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
-function Dashboard() {
+function Dashboard({ user }) {
     const [products, setProducts] = useState([]);
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        if (localStorage.getItem('isAdmin') == null) {
+        if (user.type !== "admin") {
             window.location.href = '/';
         }
 

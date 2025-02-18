@@ -5,21 +5,34 @@
       "username": "Esteban",
       "email": "estebangp2003@gmail.com",
       "password": "renaido",
-      "type": "admin"
+      "type": "admin",
+      "cart": [
+        "1"
+      ]
     },
     {
       "id": "8755",
       "username": "Borja",
       "email": "borjamp@gmail.com",
       "password": "abc123",
-      "type": "user"
+      "type": "user",
+      "cart": []
     },
     {
       "id": "90a5",
       "username": "Estebomba",
       "email": "estebomba@gmail.com",
       "password": "renaido",
-      "type": "user"
+      "type": "user",
+      "cart": []
+    },
+    {
+      "id": "c150",
+      "username": "Johan",
+      "email": "johan@gmail.com",
+      "password": "abc123",
+      "type": "user",
+      "cart": []
     }
   ],
   "products": [
@@ -174,7 +187,7 @@
       "type": "collectable"
     }
   ],
-  "teams":[
+  "teams": [
     {
       "id": "1",
       "nameId": "ferrari",
