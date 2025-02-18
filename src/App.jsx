@@ -8,6 +8,7 @@ import Team from "./components/Team"
 import FullProduct from "./components/FullProduct"
 import Teams from "./components/Teams"
 import Cart from "./components/Cart"
+import User from "./components/User"
 import './index.css'
 import {
   BrowserRouter,
@@ -68,7 +69,7 @@ function Layout() {
 
   return (
     <>
-      <NavBar onLogout={handleLogout} user={user}/>
+      <NavBar onLogout={handleLogout} user={user} products={products}/>
       <Routes>
         <Route path="/" element={<Home products={products}/>}></Route>
         <Route path="/signup" element={<Signup onLogin={handleLogin}/>}></Route>
@@ -79,6 +80,7 @@ function Layout() {
         <Route path="/product/:id" element={<FullProduct products={products} user={user}/>}></Route>
         <Route path="/teams" element={<Teams teams={teams}/>}></Route>
         <Route path="/cart" element={<Cart products={products} user={user}/>}></Route>
+        <Route path="/user" element={<User onLogin={handleLogin} user={user}/>}></Route>
       </Routes>
     </>
   ) 

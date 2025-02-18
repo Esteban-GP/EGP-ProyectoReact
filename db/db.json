@@ -1,7 +1,6 @@
 {
   "users": [
     {
-      "id": "792a",
       "username": "Esteban",
       "email": "estebangp2003@gmail.com",
       "password": "renaido",
@@ -12,8 +11,10 @@
         "5",
         "12",
         "13",
-        "10"
-      ]
+        "10",
+        "1"
+      ],
+      "id": "792a"
     },
     {
       "id": "8755",
