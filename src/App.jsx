@@ -7,6 +7,7 @@ import Shop from "./components/Shop"
 import Team from "./components/Team"
 import FullProduct from "./components/FullProduct"
 import Teams from "./components/Teams"
+import Cart from "./components/Cart"
 import './index.css'
 import {
   BrowserRouter,
@@ -77,6 +78,7 @@ function Layout() {
         <Route path="/team/:id" element={<Team products={products} teams={teams}/>}></Route>
         <Route path="/product/:id" element={<FullProduct products={products} user={user}/>}></Route>
         <Route path="/teams" element={<Teams teams={teams}/>}></Route>
+        <Route path="/cart" element={<Cart products={products} user={user}/>}></Route>
       </Routes>
     </>
   ) 
