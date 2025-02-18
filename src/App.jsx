@@ -64,7 +64,7 @@ function App() {
         <Route path="/shop" element={<Shop products={products}/>}></Route>
         <Route path="/team/:id" element={<Team products={products} teams={teams}/>}></Route>
         <Route path="/product/:id" element={<FullProduct products={products}/>}></Route>
-        <Route path="/teams" element={<Teams/>}></Route>
+        <Route path="/teams" element={<Teams teams={teams}/>}></Route>
       </Routes>
 
     </BrowserRouter>
