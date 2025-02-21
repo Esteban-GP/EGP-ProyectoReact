@@ -1,6 +1,7 @@
 {
   "users": [
     {
+      "id": "792a",
       "username": "Esteban",
       "email": "estebangp2003@gmail.com",
       "password": "renaido",
@@ -9,20 +10,15 @@
         "1",
         "3",
         "5",
-        "12",
         "13",
         "10",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
         "1"
-      ],
-      "id": "792a"
-    },
-    {
-      "id": "8755",
-      "username": "Borja",
-      "email": "borjamp@gmail.com",
-      "password": "abc123",
-      "type": "user",
-      "cart": []
+      ]
     },
     {
       "id": "90a5",
@@ -48,7 +44,7 @@
       "price": "59.95",
       "img": "/ferrari/TShirtF-Ferrari.png",
       "hoverImg": "/ferrari/TShirtB-Ferrari.png",
-      "description": "Premium Ferrari T-Shirt crafted from 100% cotton, combining comfort with a sleek design.",
+      "description": "High-quality Ferrari T-Shirt featuring a soft cotton fabric and a modern fit.",
       "team": "ferrari",
       "type": "apparel"
     },
@@ -153,16 +149,6 @@
       "type": "apparel"
     },
     {
-      "id": "12",
-      "name": "Ferrari Bottle",
-      "price": "24.95",
-      "img": "/ferrari/Bottle-Ferrari.png",
-      "hoverImg": "",
-      "description": "Durable Ferrari water bottle, ideal for staying hydrated on the go.",
-      "team": "ferrari",
-      "type": "collectable"
-    },
-    {
       "id": "13",
       "name": "Ferrari Lego",
       "price": "219.95",
@@ -190,6 +176,16 @@
       "hoverImg": "",
       "description": "Exclusive McLaren Lego set, great for fans and collectors alike.",
       "team": "mclaren",
+      "type": "collectable"
+    },
+    {
+      "id": "e1d9",
+      "name": "Ferrari Bottle",
+      "price": "24.95",
+      "img": "/ferrari/Bottle-Ferrari.png",
+      "hoverImg": "",
+      "description": "Exclusive Ferrari Bottle, premium quality and perfect for everyday use.",
+      "team": "ferrari",
       "type": "collectable"
     }
   ],

@@ -2,14 +2,15 @@ import { useState, useMemo } from "react";
 
 function Cart({ products, user }) {
     const [checkedProds, setCheckedProds] = useState([]);
+    const [localCart, setLocalCart] = useState(user.cart);  // Usar estado para el carrito localmente
 
     const productQuantities = useMemo(() => {
         const counts = {};
-        user.cart.forEach(id => {
+        localCart.forEach(id => {  // Usamos el carrito local aquí
             counts[id] = (counts[id] || 0) + 1;
         });
         return counts;
-    }, [user.cart]);
+    }, [localCart]);
 
     const calculateTotal = useMemo(() => {
         return Object.keys(productQuantities).reduce((total, id) => {
@@ -18,18 +19,37 @@ function Cart({ products, user }) {
         }, 0);
     }, [productQuantities, products]);
 
-    function addProd(id) {
-        return () => {
-            setCheckedProds([...checkedProds, id]);
-        };
+    async function addProd(id) {
+        // Actualizar el carrito localmente
+        const updatedCart = [...localCart, id];
+        setLocalCart(updatedCart); // Actualizar el estado local del carrito
+
+        // Actualizar el carrito en el backend
+        user.cart.push(id)
+        const response = await fetch(`http://localhost:5000/users/${user.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        });
     }
 
     function elimProd(id) {
         return () => {
-            const index = checkedProds.indexOf(id);
-            if (index > -1) {
-                setCheckedProds(checkedProds.filter(prodId => prodId !== id));
-            }
+            // Eliminar producto de carrito local
+            const updatedCart = localCart.filter(prodId => prodId !== id);
+            setLocalCart(updatedCart); // Actualizar el carrito local
+
+            // Actualizar el carrito en el backend
+            const updatedUser = { ...user, cart: updatedCart };
+            fetch(`http://localhost:5000/users/${user.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedUser),
+            });
         };
     }
 
@@ -55,9 +75,9 @@ function Cart({ products, user }) {
                                         <div className="flex flex-col">
                                             <span className="mb-1">Quantity: </span>
                                             <div className="flex bg bg-gray-300 rounded-full justify-between h-7 items-center">
-                                                <button className="bg bg-red-600 w-7 h-7 rounded-full text-white" onClick={elimProd(product.id)}>-</button>
+                                                <button className="bg bg-red-600 w-7 h-7 rounded-full text-white" onClick={() => elimProd(product.id)}>-</button>
                                                 <span>{productQuantities[id]}</span>
-                                                <button className="bg bg-red-600 w-7 h-7 rounded-full text-white" onClick={addProd(product.id)}>+</button>
+                                                <button className="bg bg-red-600 w-7 h-7 rounded-full text-white" onClick={() => addProd(product.id)}>+</button>
                                             </div> 
                                         </div>
                                     </div>
@@ -83,14 +103,14 @@ function Cart({ products, user }) {
                 )}
                 <div className="flex flex-center space-x-3 items-center ms-auto">
                     <h2 className="text-xl mb-0.5" style={{ fontFamily: 'Formula1Regular, sans-serif' }}>Total:</h2>
-                    <p>{calculateTotal} €</p>
+                    <p>{(Math.floor(calculateTotal * 100) / 100).toFixed(2)} €</p>
                 </div>
                 
                 <button
-                        type="submit"
-                        className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-20 w-full"
-                    >
-                        Pay Up
+                    type="submit"
+                    className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-20 w-full"
+                >
+                    Pay Up
                 </button>
             </div>
         </div>
