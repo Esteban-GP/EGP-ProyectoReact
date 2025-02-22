@@ -1,0 +1,72 @@
+#app {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #lights-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #connector {
+    position: absolute;
+    background: black;
+    height: 3%;
+    top: 50%;
+    width: 80%;
+    left: 10%;
+    z-index: -1;
+  }
+  
+  .light-container {
+    width: 100px;
+    padding: 0 10px;
+    border-radius: 15px;
+    background: black;
+    margin: 0 5px;
+  }
+  
+  .light {
+    padding-top: 100%;
+    border-radius: 50%;
+    background: #8080805c;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .light.on {
+    background: #c51e0f; /* Rojo cuando está encendido */
+  }
+  
+  .light.green {
+    background: #28b328; /* Verde cuando cambia */
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .light-container {
+      width: 60px;
+      padding: 0 5px;
+      border-radius: 8px;
+      background: black;
+      margin: 0 3px;
+    }
+  
+    .light {
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .time {
+      font-size: 5.5rem;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+  }
+  

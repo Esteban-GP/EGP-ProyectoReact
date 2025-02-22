@@ -9,6 +9,7 @@ import FullProduct from "./components/FullProduct"
 import Teams from "./components/Teams"
 import Cart from "./components/Cart"
 import User from "./components/User"
+import ReactionGame from "./components/ReactionGame"
 import './index.css'
 import {
   BrowserRouter,
@@ -112,6 +113,7 @@ function Layout() {
         <Route path="/teams" element={<Teams teams={teams} />}></Route>
         <Route path="/cart" element={<Cart products={products} user={user} />}></Route>
         <Route path="/user" element={<User onLogin={handleLogin} user={user} />}></Route>
+        <Route path="/game" element={<ReactionGame />}></Route>
       </Routes>
     </>
   )

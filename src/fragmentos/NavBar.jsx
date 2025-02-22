@@ -21,6 +21,7 @@ function NavBar({ onLogout, user, products }) {
       <div className="flex-grow flex items-center">
         <Link to="/shop" className="px-4">Shop</Link>
         <Link to="/teams" className="px-4">Teams</Link>
+        <Link to="/game" className="px-4">Game</Link>
         {user && user.type == "admin" && <Link to="/dashboard" className="px-4">Dashboard</Link>}
 
       </div>
