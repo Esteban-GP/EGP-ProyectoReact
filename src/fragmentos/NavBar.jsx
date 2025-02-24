@@ -7,23 +7,42 @@ function NavBar({ onLogout, user, products }) {
   const [isHovered, setIsHovered] = useState(false);
   const [itemNumbers, setItemNumbers] = useState(0);
   const [checkedProds, setCheckedProds] = useState([]);
-  const [localCart, setLocalCart] = useState(user.cart);
+  const [loading, setLoading] = useState(true);
+  const [localCart, setLocalCart] = useState([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
+      if (!user) {
+        setLoading(false);
+        return;
+      }
+
       if (user?.cart) {
         setItemNumbers(user.cart.length);
+        setLocalCart(user.cart);
+        setLoading(false);
       }
     }, 500);
   }, [user?.cart]);
 
   const productQuantities = useMemo(() => {
     const counts = {};
-    localCart.forEach(id => {  // Usamos el carrito local aquí
+    localCart.forEach(id => {
       counts[id] = (counts[id] || 0) + 1;
     });
     return counts;
   }, [localCart]);
+
+  if (loading) {
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <div style={{ textAlign: 'center' }}>
+        <div className="spinner" style={{ marginBottom: '20px' }}></div>
+        <div>Cargando...</div>
+      </div>
+      </div>
+    );
+  }
 
   return (
     <nav className="sticky shadow-lg flex items-center relative z-50 bg-white p-1 shadow-md top-0" style={{ fontFamily: 'Formula1Regular, sans-serif' }}>
@@ -76,7 +95,7 @@ function NavBar({ onLogout, user, products }) {
                       <h2 className="mb-3" style={{ fontFamily: 'Formula1Regular, sans-serif' }}>Cart content</h2>
                       {Object.keys(productQuantities).map(id =>
                         products.filter(product => product.id === id).map(product => (
-                          <div key={product.id} className="">
+                          <div key={product.id} className="font-sans">
                             <div className="flex justify-between">
                               <p>{product.name}</p>
                               <p>{productQuantities[id]} x {product.price} €</p>

@@ -14,7 +14,7 @@ function Home({ products }) {
             
             <h2 className='text-5xl text-center mt-20' style={{ fontFamily: 'Formula1Regular, sans-serif'}}>Highlighted Products</h2>
             <hr className='mb-20 mt-6 w-100 mx-auto ring-1' />
-            <div className='grid grid-cols-5 gap-4 mx-50 mb-50'>
+            <div className='grid grid-cols-1 mx-50 mb-50 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5'>
                 {products.map(product => 
                     (highlightedProducts.includes(product.id) &&
                         <Product key={product.id} product={product} />))

@@ -77,7 +77,7 @@ function Shop() {
     };
 
     return (
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 pb-20">
             <h2 className='text-5xl text-center mt-10' style={{ fontFamily: 'Formula1Regular, sans-serif' }}>Shop</h2>
             <hr className='mb-20 mt-6 w-full mx-auto ring-1' />
             <div className="flex flex-center">
