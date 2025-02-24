@@ -1,17 +1,29 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import f1store1 from '/f1store1.svg';
 import { IoCartOutline } from "react-icons/io5";
 
 function NavBar({ onLogout, user, products }) {
   const [isHovered, setIsHovered] = useState(false);
   const [itemNumbers, setItemNumbers] = useState(0);
+  const [checkedProds, setCheckedProds] = useState([]);
+  const [localCart, setLocalCart] = useState(user.cart);
 
   useEffect(() => {
-    if (user && user.cart) {
-      setItemNumbers(user.cart.length);
-    }
-  }, [user]);
+    const interval = setInterval(() => {
+      if (user?.cart) {
+        setItemNumbers(user.cart.length);
+      }
+    }, 500);
+  }, [user?.cart]);
+
+  const productQuantities = useMemo(() => {
+    const counts = {};
+    localCart.forEach(id => {  // Usamos el carrito local aquí
+      counts[id] = (counts[id] || 0) + 1;
+    });
+    return counts;
+  }, [localCart]);
 
   return (
     <nav className="sticky shadow-lg flex items-center relative z-50 bg-white p-1 shadow-md top-0" style={{ fontFamily: 'Formula1Regular, sans-serif' }}>
@@ -19,10 +31,10 @@ function NavBar({ onLogout, user, products }) {
         <img src={f1store1} alt="Logo" className="w-65 px-7 py-7" />
       </Link>
       <div className="flex-grow flex items-center">
-        <Link to="/shop" className="px-4">Shop</Link>
-        <Link to="/teams" className="px-4">Teams</Link>
-        <Link to="/game" className="px-4">Game</Link>
-        {user && user.type == "admin" && <Link to="/dashboard" className="px-4">Dashboard</Link>}
+        <Link to="/shop" className="px-4 hover:underline">Shop</Link>
+        <Link to="/teams" className="px-4 hover:underline">Teams</Link>
+        <Link to="/game" className="px-4 hover:underline">Game</Link>
+        {user && user.type == "admin" && <Link to="/dashboard" className="px-4 hover:underline">Dashboard</Link>}
 
       </div>
       <div className="flex items-center">
@@ -62,16 +74,16 @@ function NavBar({ onLogout, user, products }) {
                   {!user.cart == [] && (
                     <div className="flex flex-col bg bg-gray-100 rounded-xl p-4 my-auto w-70 overflow-hidden">
                       <h2 className="mb-3" style={{ fontFamily: 'Formula1Regular, sans-serif' }}>Cart content</h2>
-                      {user.cart.flatMap((id, index) =>
-                        products.filter(product => product.id === id).map(product =>
-                          <div key={`${product.id}-${index}`} className="font-sans">
+                      {Object.keys(productQuantities).map(id =>
+                        products.filter(product => product.id === id).map(product => (
+                          <div key={product.id} className="">
                             <div className="flex justify-between">
                               <p>{product.name}</p>
-                              <p>{product.price} €</p>
+                              <p>{productQuantities[id]} x {product.price} €</p>
                             </div>
                             <hr className="h-px my-2 bg-gray-400 border-0" />
                           </div>
-                        )
+                        ))
                       )}
                     </div>
                   )}

@@ -10,12 +10,16 @@ import Teams from "./components/Teams"
 import Cart from "./components/Cart"
 import User from "./components/User"
 import ReactionGame from "./components/ReactionGame"
+import Footer from "./fragmentos/Footer"
+import Error404 from "./components/Error404"
+import { Navigate } from "react-router-dom"
 import './index.css'
 import {
   BrowserRouter,
   Route,
   Routes,
   useNavigate,
+  useLocation
 } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
@@ -26,6 +30,7 @@ function Layout() {
   const [products, setProducts] = useState([]);
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -88,6 +93,9 @@ function Layout() {
     navigate("/");
   };
 
+  const hideFooter = location.pathname === '/user' || location.pathname === '/signup' || location.pathname === '/login' 
+  || location.pathname === '/error' || location.pathname === '/teams' || location.pathname === '/dashboard';
+
   if (loading) {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -103,6 +111,8 @@ function Layout() {
     <>
       <NavBar onLogout={handleLogout} user={user} products={products} />
       <Routes>
+        <Route path="*" element={<Navigate to="/error" replace />}></Route>
+        <Route path="/error" element={<Error404 />}></Route>
         <Route path="/" element={<Home products={products} />}></Route>
         <Route path="/signup" element={<Signup onLogin={handleLogin} />}></Route>
         <Route path="/login" element={<Login onLogin={handleLogin} />}></Route>
@@ -115,6 +125,7 @@ function Layout() {
         <Route path="/user" element={<User onLogin={handleLogin} user={user} />}></Route>
         <Route path="/game" element={<ReactionGame />}></Route>
       </Routes>
+      {!hideFooter && <Footer />}
     </>
   )
 }

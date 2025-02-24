@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./ReactionGame.css";
-import fondof1 from '/fondo2f1.png';
+import fondoGame from '/fondoGame.png';
 
 const LIGHT_ON_INTERVAL = 1000;
 const IDLE = "idle";
@@ -83,8 +83,8 @@ const ReactionGame = () => {
     };
 
     return (
-        <div id="app"  className="text-white bg-no-repeat -z-10" 
-        style={{ backgroundImage: `url(${fondof1})`, backgroundSize: 'cover', height: '100vh', backgroundPosition: 'center', fontFamily: 'Formula1-Bold, sans-serif' }}>
+        <div id="app"  className="text-red-600 bg-no-repeat" 
+        style={{ backgroundImage: `url(${fondoGame})`, backgroundSize: 'cover', height: '100vh', backgroundPosition: 'center', fontFamily: 'Formula1-Bold, sans-serif' }}>
             <div id="lights-container" onClick={onClick}>
                 <div id="connector"></div>
                 {activeLights.map((state, index) => (
@@ -92,7 +92,7 @@ const ReactionGame = () => {
                 ))}
             </div>
 
-            <h1 className="time">{result !== null ? result : ""}</h1>
+            <h1 className="time mt-5">{result !== null ? result : ""}</h1>
             <div>Your best: {format(best)}</div>
         </div>
     );

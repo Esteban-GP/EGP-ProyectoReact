@@ -35,23 +35,34 @@ function Cart({ products, user }) {
         });
     }
 
-    function elimProd(id) {
-        return () => {
-            // Eliminar producto de carrito local
-            const updatedCart = localCart.filter(prodId => prodId !== id);
+    async function elimProd(id) {
+        // Eliminar solo la primera ocurrencia del producto en el carrito local
+        const updatedCart = [...localCart];
+        const index = updatedCart.indexOf(id);
+    
+        if (index !== -1) {
+            updatedCart.splice(index, 1); // Elimina la primera ocurrencia del id
             setLocalCart(updatedCart); // Actualizar el carrito local
-
+    
             // Actualizar el carrito en el backend
             const updatedUser = { ...user, cart: updatedCart };
-            fetch(`http://localhost:5000/users/${user.id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(updatedUser),
-            });
-        };
+            try {
+                const response = await fetch(`http://localhost:5000/users/${user.id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(updatedUser),
+                });
+                if (!response.ok) {
+                    console.error("Error updating cart on backend");
+                }
+            } catch (error) {
+                console.error("Error communicating with the backend:", error);
+            }
+        }
     }
+    
 
     return (
         <div className="m-10 flex flex-col lg:flex-row mx-4 lg:mx-40 justify-between gap-4 lg:gap-15">
@@ -63,7 +74,7 @@ function Cart({ products, user }) {
                         products
                             .filter(product => product.id === id)
                             .map(product => (
-                                <div key={product.id} className="bg-gray-100 flex flex-col lg:flex-row p-4 rounded-lg border border-red-700" style={{ fontFamily: 'Formula1Regular, sans-serif' }}>
+                                <div key={product.id} className="bg-gray-100 w-240 flex flex-col lg:flex-row p-4 rounded-lg border border-red-700" style={{ fontFamily: 'Formula1Regular, sans-serif' }}>
                                     <img src={product.img} alt={product.name} className="w-full lg:w-[8rem] object-contain rounded-xl shadow-lg aspect-square" />
                                     <div className="mt-4 lg:mt-0 lg:ml-4">
                                         <h2 className="text-2xl">{product.name}</h2>
