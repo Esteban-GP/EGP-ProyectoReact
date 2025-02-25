@@ -57,7 +57,7 @@ function FullProduct({ products, user }) {
                             </select>
                         </form>
 
-                        <button className="focus:outline-none text-white mb-20 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-12 py-3 mt-8 mb-2"
+                        <button className="focus:outline-none text-white mb-20 transition bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-12 py-3 mt-8 mb-2"
                         onClick={addToCart}>
                             Add to Cart
                         </button>

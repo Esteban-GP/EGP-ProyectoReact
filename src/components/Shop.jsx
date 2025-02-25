@@ -11,7 +11,7 @@ function Shop() {
     const [astonFilter, setAstonFilter] = useState(false);
     const [alpineFilter, setAlpineFilter] = useState(false);
     const [rbFilter, setRbFilter] = useState(false);
-    const [kickFilter, setKickFilter] = useState(false);
+    const [sauberFilter, setSauberFilter] = useState(false);
     const [haasFilter, setHaasFilter] = useState(false);
     const [williamsFilter, setWilliamsFilter] = useState(false);
     const [apparelFilter, setApparelFilter] = useState(false);
@@ -39,7 +39,7 @@ function Shop() {
 
     useEffect(() => {
         updateList();
-    }, [ferrariFilter, mercedesFilter, redbullFilter, mclarenFilter, astonFilter, alpineFilter, rbFilter, kickFilter, haasFilter, williamsFilter, apparelFilter, collectablesFilter]);
+    }, [ferrariFilter, mercedesFilter, redbullFilter, mclarenFilter, astonFilter, alpineFilter, rbFilter, sauberFilter, haasFilter, williamsFilter, apparelFilter, collectablesFilter]);
 
     function updateList() {
         let filtered = []
@@ -51,7 +51,7 @@ function Shop() {
             if (astonFilter && product.team === "aston") return true;
             if (alpineFilter && product.team === "alpine") return true;
             if (rbFilter && product.team === "rb") return true;
-            if (kickFilter && product.team === "kick") return true;
+            if (sauberFilter && product.team === "sauber") return true;
             if (haasFilter && product.team === "haas") return true;
             if (williamsFilter && product.team === "williams") return true;
             return false;
@@ -108,7 +108,7 @@ function Shop() {
                             <label className="flex items-center space-x-2"><input type="checkbox" value="aston" checked={astonFilter} onChange={() => setAstonFilter(!astonFilter)} /><img src="aston/aston-logo.svg" alt="Aston Martin" className="w-10"/> <span>Aston Martin</span></label>
                             <label className="flex items-center space-x-2"><input type="checkbox" value="alpine" checked={alpineFilter} onChange={() => setAlpineFilter(!alpineFilter)} /><img src="alpine/alpine-logo.png" alt="Alpine" className="w-9"/> <span>Alpine</span></label>
                             <label className="flex items-center space-x-2"><input type="checkbox" value="rb" checked={rbFilter} onChange={() => setRbFilter(!rbFilter)} /><img src="rb/rb-logo.png" alt="RB Cash App" className="w-10"/> <span>RB Cash App</span></label>
-                            <label className="flex items-center space-x-2"><input type="checkbox" value="kick" checked={kickFilter} onChange={() => setKickFilter(!kickFilter)} /><img src="sauber/sauber-logo.png" alt="Kick Sauber" className="w-9"/> <span>Kick Sauber</span></label>
+                            <label className="flex items-center space-x-2"><input type="checkbox" value="sauber" checked={sauberFilter} onChange={() => setSauberFilter(!sauberFilter)} /><img src="sauber/sauber-logo.png" alt="Kick Sauber" className="w-9"/> <span>Kick Sauber</span></label>
                             <label className="flex items-center space-x-2"><input type="checkbox" value="haas" checked={haasFilter} onChange={() => setHaasFilter(!haasFilter)} /><img src="haas/haas-logo.png" alt="Haas" className="w-9"/> <span>Haas</span></label>
                             <label className="flex items-center space-x-2"><input type="checkbox" value="williams" checked={williamsFilter} onChange={() => setWilliamsFilter(!williamsFilter)} /><img src="williams/williams-logo.png" alt="Williams" className="w-9"/> <span>Williams</span></label>
                         </div>

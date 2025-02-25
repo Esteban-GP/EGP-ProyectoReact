@@ -183,6 +183,126 @@
       "description": "Exclusive Ferrari Bottle, premium quality and perfect for everyday use.",
       "team": "ferrari",
       "type": "collectable"
+    },
+    {
+      "id": "099a",
+      "name": "Williams Cap",
+      "price": "24.95",
+      "img": "/williams/Cap-Williams.png",
+      "hoverImg": "",
+      "description": "Stylish Williams cap with the iconic logo, perfect for any motorsport enthusiast.",
+      "team": "williams",
+      "type": "apparel"
+    },
+    {
+      "id": "4c68",
+      "name": "Aston Martin Cap",
+      "price": "24.95",
+      "img": "/aston/Cap-Aston.png",
+      "hoverImg": "",
+      "description": "Stylish Aston Martin cap with the iconic logo, perfect for any motorsport enthusiast",
+      "team": "aston",
+      "type": "apparel"
+    },
+    {
+      "id": "abc2",
+      "name": "Red Bull Cap",
+      "price": "24.95",
+      "img": "/redbull/Cap-RedBull.png",
+      "hoverImg": "",
+      "description": "Stylish Red Bull cap with the iconic logo, perfect for any motorsport enthusiast",
+      "team": "redbull",
+      "type": "apparel"
+    },
+    {
+      "id": "cb23",
+      "name": "Mercedes Cap",
+      "price": "24.95",
+      "img": "/mercedes/Cap-Mercedes.png",
+      "hoverImg": "",
+      "description": "Stylish Mercedes cap with the iconic logo, perfect for any motorsport enthusiast",
+      "team": "mercedes",
+      "type": "apparel"
+    },
+    {
+      "id": "8635",
+      "name": "McLaren Cap",
+      "price": "24.95",
+      "img": "/mclaren/Cap-Mclaren.png",
+      "hoverImg": "",
+      "description": "Stylish McLaren cap with the iconic logo, perfect for any motorsport enthusiast",
+      "team": "mclaren",
+      "type": "apparel"
+    },
+    {
+      "id": "1d7c",
+      "name": "Alpine Cap",
+      "price": "24.95",
+      "img": "/alpine/Cap-Alpine.png",
+      "hoverImg": "",
+      "description": "Stylish Alpine cap with the iconic logo, perfect for any motorsport enthusiast",
+      "team": "alpine",
+      "type": "apparel"
+    },
+    {
+      "id": "2af4",
+      "name": "Haas Cap",
+      "price": "24.95",
+      "img": "/haas/Cap-Haas.png",
+      "hoverImg": "",
+      "description": "Stylish Haas cap with the iconic logo, perfect for any motorsport enthusiast",
+      "team": "haas",
+      "type": "apparel"
+    },
+    {
+      "id": "7993",
+      "name": "Sauber Cap",
+      "price": "24.95",
+      "img": "/sauber/Cap-Sauber.png",
+      "hoverImg": "",
+      "description": "Stylish Sauber cap with the iconic logo, perfect for any motorsport enthusiast",
+      "team": "sauber",
+      "type": "apparel"
+    },
+    {
+      "id": "82b5",
+      "name": "RB Cap",
+      "price": "24.95",
+      "img": "/rb/Cap-RB.png",
+      "hoverImg": "",
+      "description": "Stylish RB cap with the iconic logo, perfect for any motorsport enthusiast",
+      "team": "rb",
+      "type": "apparel"
+    },
+    {
+      "id": "82b6",
+      "name": "Alpine Polo",
+      "price": "69.95",
+      "img": "/alpine/PoloF-Alpine.png",
+      "hoverImg": "/alpine/PoloB-Alpine.png",
+      "description": "Elegant Alpine Polo made from premium cotton, perfect for any occasion.",
+      "team": "alpine",
+      "type": "apparel"
+    },
+    {
+      "id": "82b7",
+      "name": "Alpine 1:43 Model",
+      "price": "89.95",
+      "img": "/alpine/Model-Alpine.png",
+      "hoverImg": "",
+      "description": "Detailed Alpine model, a great addition to any collection or display.",
+      "team": "alpine",
+      "type": "collectable"
+    },
+    {
+      "id": "82b8",
+      "name": "Alpine Bag",
+      "price": "29.95",
+      "img": "/alpine/Bag-Alpine.png",
+      "hoverImg": "",
+      "description": "Stylish Alpine bag with ample storage space, perfect for everyday use.",
+      "team": "alpine",
+      "type": "collectable"
     }
   ],
   "teams": [
