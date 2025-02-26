@@ -58,7 +58,7 @@ function NavBar({ onLogout, user, products }) {
         )}
         {user && (
           <div className='flex items-center h-full'>
-            <Link to="/cart"
+            <Link to="/cart"  
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               className='h-16 flex items-center'>
@@ -73,7 +73,7 @@ function NavBar({ onLogout, user, products }) {
 
               {isHovered && (
                 <div className="absolute top-full right-30 mt-2 w-70 overflow-hidden">
-                  {user.cart == [] && (
+                  {user.ite == [] && (
                     <p className="p-2">Your cart is empty</p>
                   )}
                   {!user.cart == [] && (

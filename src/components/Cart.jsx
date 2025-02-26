@@ -36,16 +36,15 @@ function Cart({ products, user }) {
     }
 
     async function elimProd(id) {
-        // Eliminar solo la primera ocurrencia del producto en el carrito local
         const updatedCart = [...localCart];
         const index = updatedCart.indexOf(id);
     
         if (index !== -1) {
-            updatedCart.splice(index, 1); // Elimina la primera ocurrencia del id
-            setLocalCart(updatedCart); // Actualizar el carrito local
+            updatedCart.splice(index, 1);
+            setLocalCart(updatedCart);
     
-            // Actualizar el carrito en el backend
             const updatedUser = { ...user, cart: updatedCart };
+            user.cart = updatedCart;
             try {
                 const response = await fetch(`http://localhost:5000/users/${user.id}`, {
                     method: 'PUT',

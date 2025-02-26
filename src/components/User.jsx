@@ -3,6 +3,7 @@ import fondof1 from '/fondof1.png';
 
 const User = ({ onLogin, user }) => {
     const [username, setUsername] = useState(user.username);
+    const [email, setEmail] = useState(user.email);
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
 
@@ -70,8 +71,8 @@ const User = ({ onLogin, user }) => {
                         <input
                             type="email"
                             id="email"
-                            value={user.email}
-                            readOnly
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             className="w-full px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
                         />
                     </div>

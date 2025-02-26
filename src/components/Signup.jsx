@@ -8,6 +8,23 @@ const Signup = ({ onLogin }) => {
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
 
+    const validatePassword = (password) => {
+        // Expresión regular para validar la contraseña
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        if (!passwordPattern.test(password)) {
+            return "Password must be at least 8 characters, contain 1 uppercase letter, 1 lowercase letter, and 1 number.";
+        }
+        return null;
+    };
+
+    const validateEmail = (email) => {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            return "Email is not valid"
+        }
+        return null;
+    }
+
     async function checkUser() {
         const users = await fetch('http://localhost:5000/users');
         const usersData = await users.json();
@@ -19,7 +36,7 @@ const Signup = ({ onLogin }) => {
                         <span class="block sm:inline">User already exists.</span>
                     </div>`;
         } else {
-            const newUser = { username, email, password, type: 'user' , cart: []};
+            const newUser = { username, email, password, type: 'user', cart: [] };
             const response = await fetch('http://localhost:5000/users', {
                 method: 'POST',
                 headers: {
@@ -34,11 +51,25 @@ const Signup = ({ onLogin }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const passwordError = validatePassword(password);
+        const emailError = validateEmail(email);
         if (password !== passwordRepeat) {
             document.getElementById('error').innerHTML = `<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
                         <strong class="font-bold">Error!</strong>
                         <span class="block sm:inline">Passwords do not match.</span>
                     </div>`;
+        } else if (passwordError) {
+            document.getElementById('error').innerHTML = `<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">Error!</strong>
+                    <span class="block sm:inline">${passwordError}</span>
+                </div>`;
+            return;
+        } else if (emailError) {
+            document.getElementById('error').innerHTML = `<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <strong class="font-bold">Error!</strong>
+            <span class="block sm:inline">${emailError}</span>
+                    </div>`;
+            return;
         } else {
             checkUser();
         };
@@ -49,7 +80,7 @@ const Signup = ({ onLogin }) => {
             <div className="w-full max-w-md p-8 space-y-8 bg-white rounded shadow-md ">
                 <h2 className="text-2xl font-bold text-center" style={{ fontFamily: 'Formula1-Bold, sans-serif' }}>SIGN UP</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="my-8">
+                    <div className="my-8">
                         <label htmlFor="username" className="block text-sm font-medium text-gray-700">
                             Username
                         </label>
