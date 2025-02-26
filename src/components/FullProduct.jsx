@@ -46,17 +46,6 @@ function FullProduct({ products, user }) {
                         <h2 className='text-2xl text-gray-800 mb-7'>{product.price} €</h2>
                         <h2 className='w-96 md:w-[500px] text-lg mb-5'>{product.description}</h2>
 
-                        <form className="w-full max-w-xs space-y-3">
-                            <label htmlFor="size" className="text-xl">Size</label>
-                            <select id="size" className="border border-gray-300 bg-white text-gray-900 text-lg rounded-lg w-full p-2">
-                                <option value="">Choose your size</option>
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                            </select>
-                        </form>
-
                         <button className="focus:outline-none text-white mb-20 transition bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-12 py-3 mt-8 mb-2"
                         onClick={addToCart}>
                             Add to Cart

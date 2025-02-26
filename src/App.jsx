@@ -1,29 +1,20 @@
-import NavBar from "./fragmentos/NavBar"
-import Login from "./components/Login"
-import Signup from "./components/Signup"
-import Home from "./components/Home"
-import Dashboard from "./components/Dashboard"
-import Shop from "./components/Shop"
-import Team from "./components/Team"
-import FullProduct from "./components/FullProduct"
-import Teams from "./components/Teams"
-import Cart from "./components/Cart"
-import User from "./components/User"
-import ReactionGame from "./components/ReactionGame"
-import Footer from "./fragmentos/Footer"
-import Error404 from "./components/Error404"
-import { Navigate } from "react-router-dom"
-import './index.css'
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useNavigate,
-  useLocation
-} from "react-router-dom";
-import { useState, useEffect } from 'react';
-
-
+import { useState, useEffect, useMemo } from 'react';
+import { BrowserRouter, Route, Routes, useNavigate, useLocation, Navigate } from "react-router-dom";
+import NavBar from "./fragmentos/NavBar";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Home from "./components/Home";
+import Dashboard from "./components/Dashboard";
+import Shop from "./components/Shop";
+import Team from "./components/Team";
+import FullProduct from "./components/FullProduct";
+import Teams from "./components/Teams";
+import Cart from "./components/Cart";
+import User from "./components/User";
+import ReactionGame from "./components/ReactionGame";
+import Footer from "./fragmentos/Footer";
+import Error404 from "./components/Error404";
+import './index.css';
 
 function Layout() {
   const [user, setUser] = useState(null);
@@ -43,9 +34,7 @@ function Layout() {
 
       try {
         const response = await fetch(`http://localhost:5000/users/${userId}`);
-        if (!response.ok) {
-          throw new Error('Error fetching user');
-        }
+        if (!response.ok) throw new Error('Error fetching user');
         const data = await response.json();
         setUser(data);
       } catch (error) {
@@ -62,9 +51,7 @@ function Layout() {
           fetch('http://localhost:5000/teams')
         ]);
 
-        if (!productsRes.ok || !teamsRes.ok) {
-          throw new Error('Error fetching data');
-        }
+        if (!productsRes.ok || !teamsRes.ok) throw new Error('Error fetching data');
 
         const productsData = await productsRes.json();
         const teamsData = await teamsRes.json();
@@ -74,12 +61,16 @@ function Layout() {
       } catch (error) {
         console.error('Error:', error);
       } finally {
-        setLoading(false); // Finalizamos la carga después de obtener los datos
+        setLoading(false);
       }
     }
 
     fetchData();
   }, []);
+
+  const memoizedUser = useMemo(() => user, [user]);
+  const memoizedProducts = useMemo(() => products, [products]);
+  const memoizedTeams = useMemo(() => teams, [teams]);
 
   const handleLogin = (userData) => {
     setUser(userData);
@@ -93,41 +84,40 @@ function Layout() {
     navigate("/");
   };
 
-  const hideFooter = location.pathname === '/user' || location.pathname === '/signup' || location.pathname === '/login' 
-  || location.pathname === '/error' || location.pathname === '/teams' || location.pathname === '/dashboard';
+  const hideFooter = ["/user", "/signup", "/login", "/error", "/teams", "/dashboard"].includes(location.pathname);
 
   if (loading) {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <div style={{ textAlign: 'center' }}>
-        <div className="spinner" style={{ marginBottom: '20px' }}></div>
-        <div>Cargando...</div>
-      </div>
+        <div style={{ textAlign: 'center' }}>
+          <div className="spinner" style={{ marginBottom: '20px' }}></div>
+          <div>Cargando...</div>
+        </div>
       </div>
     );
   }
 
   return (
     <>
-      <NavBar onLogout={handleLogout} user={user} products={products} />
+      <NavBar onLogout={handleLogout} user={memoizedUser} products={memoizedProducts} />
       <Routes>
-        <Route path="*" element={<Navigate to="/error" replace />}></Route>
-        <Route path="/error" element={<Error404 />}></Route>
-        <Route path="/" element={<Home products={products} />}></Route>
-        <Route path="/signup" element={<Signup onLogin={handleLogin} />}></Route>
-        <Route path="/login" element={<Login onLogin={handleLogin} />}></Route>
-        <Route path="/dashboard" element={<Dashboard user={user} />}></Route>
-        <Route path="/shop" element={<Shop products={products} />}></Route>
-        <Route path="/team/:id" element={<Team products={products} teams={teams} />}></Route>
-        <Route path="/product/:id" element={<FullProduct products={products} user={user} />}></Route>
-        <Route path="/teams" element={<Teams teams={teams} />}></Route>
-        <Route path="/cart" element={<Cart products={products} user={user} />}></Route>
-        <Route path="/user" element={<User onLogin={handleLogin} user={user} />}></Route>
-        <Route path="/game" element={<ReactionGame />}></Route>
+        <Route path="*" element={<Navigate to="/error" replace />} />
+        <Route path="/error" element={<Error404 />} />
+        <Route path="/" element={<Home products={memoizedProducts} />} />
+        <Route path="/signup" element={<Signup onLogin={handleLogin} />} />
+        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+        <Route path="/dashboard" element={<Dashboard user={memoizedUser} />} />
+        <Route path="/shop" element={<Shop products={memoizedProducts} />} />
+        <Route path="/team/:id" element={<Team products={memoizedProducts} teams={memoizedTeams} />} />
+        <Route path="/product/:id" element={<FullProduct products={memoizedProducts} user={memoizedUser} />} />
+        <Route path="/teams" element={<Teams teams={memoizedTeams} />} />
+        <Route path="/cart" element={<Cart products={memoizedProducts} user={memoizedUser} />} />
+        <Route path="/user" element={<User onLogin={handleLogin} user={memoizedUser} />} />
+        <Route path="/game" element={<ReactionGame />} />
       </Routes>
       {!hideFooter && <Footer />}
     </>
-  )
+  );
 }
 
 function App() {

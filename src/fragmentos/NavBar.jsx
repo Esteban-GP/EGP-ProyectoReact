@@ -5,24 +5,21 @@ import { IoCartOutline } from "react-icons/io5";
 
 function NavBar({ onLogout, user, products }) {
   const [isHovered, setIsHovered] = useState(false);
-  const [itemNumbers, setItemNumbers] = useState(0);
+  const [itemNumbers, setItemNumbers] = useState(user?.cart?.length || 0);
   const [checkedProds, setCheckedProds] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [localCart, setLocalCart] = useState([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (!user) {
-        setLoading(false);
         return;
       }
 
       if (user?.cart) {
         setItemNumbers(user.cart.length);
         setLocalCart(user.cart);
-        setLoading(false);
       }
-    }, 500);
+    }, 50);
   }, [user?.cart]);
 
   const productQuantities = useMemo(() => {
@@ -33,19 +30,8 @@ function NavBar({ onLogout, user, products }) {
     return counts;
   }, [localCart]);
 
-  if (loading) {
-    return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <div style={{ textAlign: 'center' }}>
-        <div className="spinner" style={{ marginBottom: '20px' }}></div>
-        <div>Cargando...</div>
-      </div>
-      </div>
-    );
-  }
-
   return (
-    <nav className="sticky shadow-lg flex items-center relative z-50 bg-white p-1 shadow-md top-0" style={{ fontFamily: 'Formula1Regular, sans-serif' }}>
+    <nav className="sticky shadow-lg flex items-center relative z-50 bg-white p-1 top-0" style={{ fontFamily: 'Formula1Regular, sans-serif' }}>
       <Link to="/" className="flex-shrink-0">
         <img src={f1store1} alt="Logo" className="w-65 px-7 py-7" />
       </Link>
